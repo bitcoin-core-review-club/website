@@ -1,0 +1,40 @@
+---
+layout: default
+title: Home
+---
+<div class="Home">
+  <h1>A weekly review club for Bitcoin Core PRs</h1>
+    <p><em>All are welcome!</em></p>
+    <p>
+    We'll host a series of weekly review clubs on the #bitcoin-core-pr-reviews Freenode IRC channel at 17:00 UTC on Wednesdays. All are welcome to join and ask questions!<br/><br/>Reviewing and testing PRs is the best way to start contributing to Bitcoin Core, but it's difficult to know where to start. There are hundreds of open PRs, many require a lot of contextual knowledge, and contributors and reviewers often use unfamiliar terminology. This weekly IRC club is for people who want to help review Bitcoin Core PRs but find the process intimidating. Everyone is welcome to speak and questions are encouraged!<br/><br/>To take part, you should:
+    </p>
+    <ul>
+      <li>clone the repo, checkout and build the PR branch and run all tests</li>
+      <li>review the code changes and read the comments on the PR</li>
+      <li>make a note of any questions you want to ask</li>
+      <li>join the IRC channel at <strong>17:00 UTC on Wednesday</strong></li>
+    </ul>
+
+  <h2>Upcoming meetings</h2>
+  <p>15 May 2019 » <a href="https://github.com/bitcoin/bitcoin/pull/14856">#14856 net: remove more CConnman globals (theuni) (net)</a></p>
+
+  <div class="Home-posts">
+    <h2 class="Home-posts-title">Previous meetings</h2>
+    {% for post in site.posts %}
+        <div class="Home-posts-post">
+          <span class="Home-posts-post-date">{{ post.date | date_to_string }}</span>
+          <span class="Home-posts-post-arrow">&raquo;</span>
+          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
+        </div>
+    {% endfor %}
+  </div>
+
+  <h2>Other resources for new contributors</h2>
+  <ul>
+    <li>Read the <a href="https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md">Contributing to Bitcoin Core Guide</a>. This will help you understand the process and some of the terminology we use in Bitcoin Core.</li>
+    <li>Look at the <a href="https://github.com/bitcoin/bitcoin/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22">good first issues</a> and  <a href="https://github.com/bitcoin/bitcoin/issues?utf8=%E2%9C%93&q=label%3A%22Up+for+grabs%22">up for grabs</a> list.</li>
+    <li>Read the <a href="https://github.com/bitcoin/bitcoin/blob/master/doc/productivity.md">Bitcoin Core developer productivity tips</a>.</li>
+    <li>Brush up on your C++. There are many primers and reference manuals available. Some contributors recommend <a href="https://www.amazon.com/Primer-Plus-6th-Developers-Library/dp/0321776402">C++ Primer Plus</a> or <a href="https://www.amazon.com/Thinking-Vol-Introduction-Standard-2nd/dp/0139798099/ref=sr_1_1?keywords=thinking+in+C%2B%2B&qid=1555344308&s=books&sr=1-1">Thinking in C++</a> which may be a little dated and doesn't cover C++11 or 14.</li>
+    <li>Blog posts on contributing to Bitcoin Core from <a href="https://bitcointechtalk.com/a-gentle-introduction-to-bitcoin-core-development-fdc95eaee6b8">Jimmy Song</a> and <a href="https://bitcointechtalk.com/contributing-to-bitcoin-core-a-personal-account-35f3a594340b">John Newbery</a>.</li>
+  </ul>
+</div>

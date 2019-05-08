@@ -1,0 +1,45 @@
+---
+---
+
+//Typography
+$title-font: 'Roboto', sans-serif
+$body-font: 'Roboto', sans-serif
+$code-font: 'Source Code Pro', monospace
+
+//Colour Palette
+$sunc-yellow: #FEE04E
+$light-blue: #55ACEE
+$hungry-mind-blue: #268BD2
+
+$primary-color: #000000
+$secondary-color: #FEE04E
+
+//Screen size for responsiveness
+$small-screen: 320px
+$mid-screen: 768px
+$large-screen: 1024px
+
+@import '1-tools/-tools-dir'
+@import '2-base/-base-dir'
+@import '3-sections/-sections-dir'
+
+/* This is an example style sheet that comes default - just delete everything after this comment this to start from a blank slate */
+
+a
+  // text-decoration: none
+  // color: $primary-color
+  // margin: 12px
+  &:hover
+    color: $secondary-color
+
+.site-container
+  max-width: 2250px
+  margin: 0 auto
+  margin-top: 48px
+  padding: 2rem
+
+.logo
+  text-decoration: none
+  color: $primary-color
+  font:
+    size: 48px
