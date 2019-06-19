@@ -15,17 +15,31 @@ title: Home
       <li>join the IRC channel at <strong>17:00 UTC on Wednesday</strong></li>
     </ul>
 
-  <h2>Upcoming meetings</h2>
-  <p>26 June 2019 » <a href="https://github.com/bitcoin/bitcoin/pull/15681">#15681 [mempool] Allow one extra single-ancestor transaction per package (mempool)</a></p>
-
   <div class="Home-posts">
-    <h2 class="Home-posts-title">Previous meetings</h2>
-    {% for post in site.posts %}
+    <h2 class="Home-posts-title">Upcoming meetings</h2>
+    {% for post in site.posts reversed %}
+    {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+    {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+    {% if posttime >= nowunix %}
         <div class="Home-posts-post">
           <span class="Home-posts-post-date">{{ post.date | date_to_string }}</span>
           <span class="Home-posts-post-arrow">&raquo;</span>
           <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
         </div>
+    {%- endif -%}
+    {% endfor %}
+
+    <h2 class="Home-posts-title">Previous meetings</h2>
+    {% for post in site.posts %}
+    {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+    {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+    {% if posttime < nowunix %}
+        <div class="Home-posts-post">
+          <span class="Home-posts-post-date">{{ post.date | date_to_string }}</span>
+          <span class="Home-posts-post-arrow">&raquo;</span>
+          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
+        </div>
+    {%- endif -%}
     {% endfor %}
   </div>
 
