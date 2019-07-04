@@ -18,7 +18,7 @@ title: Home
   <div class="Home-posts">
     <h2 class="Home-posts-title">Upcoming meetings</h2>
     {% for post in site.posts reversed %}
-    {% capture nowunix %}{{'now' | date: "%s" | minus: 86400}}{% endcapture %}
+    {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
     {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
     {% if posttime >= nowunix %}
         <div class="Home-posts-post">
@@ -31,7 +31,7 @@ title: Home
 
     <h2 class="Home-posts-title">Previous meetings</h2>
     {% for post in site.posts %}
-    {% capture nowunix %}{{'now' | date: "%s" | minus: 86400}}{% endcapture %}
+    {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
     {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
     {% if posttime < nowunix %}
         <div class="Home-posts-post">
