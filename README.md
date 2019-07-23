@@ -1,6 +1,6 @@
 # bitcoin-core-review-club
 
-Simple Jekyll site for hosting information about upcoming Bitcoin Core PR Review club information.
+Simple Jekyll site for hosting the Bitcoin Core PR Review club at https://bitcoin-core-review-club.github.io/.
 
 ## Development
 
