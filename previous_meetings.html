@@ -1,0 +1,19 @@
+---
+layout: default
+title: Previous Meetings
+---
+<div class="Home">
+    <h2 class="Home-posts-title">Previous meetings</h2>
+    {% for post in site.posts %}
+    {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
+    {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+    {% if posttime < nowunix %}
+        <div class="Home-posts-post">
+          <span class="Home-posts-post-date">{{ post.date | date_to_string }}</span>
+          <span class="Home-posts-post-arrow">&raquo;</span>
+          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
+        </div>
+    {%- endif -%}
+    {% endfor %}
+  </div>
+</div>
