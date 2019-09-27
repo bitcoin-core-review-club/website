@@ -23,11 +23,16 @@ title: Home
     {% for post in site.posts reversed %}
     {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
     {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+    {% capture components %}
+    {%- for comp in post.components -%}
+    <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+    {% endcapture %}
     {% if posttime >= nowunix %}
         <div class="Home-posts-post">
           <span class="Home-posts-post-date">{{ post.date | date_to_string }}</span>
           <span class="Home-posts-post-arrow">&raquo;</span>
-          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }} ({{post.component}})</a>
+          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a> ({{components}})
         </div>
     {%- endif -%}
     {% endfor %}
@@ -38,11 +43,16 @@ title: Home
     {% for post in site.posts limit: 5 %}
     {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
     {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+    {% capture components %}
+    {%- for comp in post.components -%}
+    <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+    {% endcapture %}
     {% if posttime < nowunix %}
         <div class="Home-posts-post">
           <span class="Home-posts-post-date">{{ post.date | date_to_string }}</span>
           <span class="Home-posts-post-arrow">&raquo;</span>
-          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }} ({{post.component}})</a>
+          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a> ({{components}})
         </div>
     {%- endif -%}
     {% endfor %}
