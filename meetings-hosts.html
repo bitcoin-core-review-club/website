@@ -1,0 +1,35 @@
+---
+layout: default
+title: Previous Meetings
+---
+
+{% capture raw_hosts %}
+{%- for meeting in site.posts -%}
+  {%- if meeting.layout == 'pr' -%}
+    {%- if meeting.host == empty -%}
+      {% include ERROR_92_MISSING_TOPIC_CATEGORY %}
+    {%- endif -%}
+    {{meeting.host}}|
+  {%- endif -%}
+{%- endfor -%}
+{% endcapture %}
+{% assign hosts = raw_hosts | split: "|" | sort_natural | uniq %}
+
+<div class="Home">
+    <h2 class="Home-posts-title">Previous meetings</h2>
+    <p>{% include linkers/meetings-pages.md %}</p>
+    
+    {% for host in hosts %}
+    <h3 id="{{host}}">{{host}}</h3>
+      <ul>
+      {% for post in site.posts %}
+      {% if post.host == host %}
+        <li><div class="Home-posts-post">
+            <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
+        </div></li>
+      {%- endif -%}
+      {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+</div>
