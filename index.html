@@ -33,6 +33,7 @@ title: Home
           <span class="Home-posts-post-date">{{ post.date | date_to_string }}</span>
           <span class="Home-posts-post-arrow">&raquo;</span>
           <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a> ({{components}})
+	  <span class="host">hosted by <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a></span>
         </div>
     {%- endif -%}
     {% endfor %}
@@ -53,10 +54,11 @@ title: Home
           <span class="Home-posts-post-date">{{ post.date | date_to_string }}</span>
           <span class="Home-posts-post-arrow">&raquo;</span>
           <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a> ({{components}})
+	  <span class="host">hosted by <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a></span>
         </div>
     {%- endif -%}
     {% endfor %}
-    <p>See all <a href="previous_meetings.html">previous meetings</a>.</p>
+    <p>See all <a href="meetings.html">previous meetings</a>.</p>
   </div>
 
   <h2>Other resources for new contributors</h2>

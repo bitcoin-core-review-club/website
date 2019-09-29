@@ -18,7 +18,7 @@ title: Previous Meetings by Component
 {% assign components = raw_components | split: "|" | sort_natural | uniq %}
 
 <div class="Home">
-    <h2 class="Home-posts-title">Previous meetings by component</h2>
+    <h2 class="Home-posts-title">Previous meetings</h2>
     <p>{% include linkers/meetings-pages.md %}</p>
 
     {% for component in components %}
@@ -27,7 +27,8 @@ title: Previous Meetings by Component
       {% for post in site.posts %}
       {% if post.components contains component %}
         <li><div class="Home-posts-post">
-            <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
+          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
+          <span class="host">hosted by <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a></span>
         </div></li>
       {%- endif -%}
       {% endfor %}
