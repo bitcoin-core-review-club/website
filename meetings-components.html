@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Previous Meetings
+title: Previous Meetings by Component
 ---
 
 {% capture raw_components %}
@@ -18,9 +18,9 @@ title: Previous Meetings
 {% assign components = raw_components | split: "|" | sort_natural | uniq %}
 
 <div class="Home">
-    <h2 class="Home-posts-title">Previous meetings</h2>
+    <h2 class="Home-posts-title">Previous meetings by component</h2>
     <p>{% include linkers/meetings-pages.md %}</p>
-    
+
     {% for component in components %}
     <h3 id="{{component}}">{{component}}</h3>
       <ul>

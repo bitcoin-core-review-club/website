@@ -1,10 +1,9 @@
 ---
 layout: default
-title: Previous Meetings
+title: Previous Meetings by Date
 ---
-
 <div class="Home">
-    <h2 class="Home-posts-title">Previous meetings</h2>
+    <h2 class="Home-posts-title">Previous meetings by date</h2>
     <p>{% include linkers/meetings-pages.md %}</p>
     {% for post in site.posts %}
     {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
