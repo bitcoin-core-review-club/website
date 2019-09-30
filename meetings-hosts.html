@@ -25,28 +25,30 @@ title: Previous Meetings by Host
   </p>
 
 {% for host in hosts %}
-  <h3 id="{{host}}">
-    {{host}}
-    <a href="https://github.com/{{host}}"><i class="fa fa-github"></i></a>
-  </h3>
-  <ul>
-  {% for post in site.posts %}
-    {% capture components %}
-      {%- for comp in post.components -%}
-        <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
-      {%- endfor -%}
-    {% endcapture %}
-    {% if post.host == host %}
-    <li>
-      <div class="Home-posts-post">
-        <a class="Home-posts-post-title" href="{{ post.url }}">
-          {{ post.title }}
-        </a>
-        ({{components}})
-      </div>
-    </li>
-    {%- endif -%}
-  {% endfor %}
-  </ul>
+  <div id="{{host}}">
+    <h3>
+      {{host}}
+      <a href="https://github.com/{{host}}"><i class="fa fa-github"></i></a>
+    </h3>
+    <ul>
+    {% for post in site.posts %}
+      {% capture components %}
+        {%- for comp in post.components -%}
+          <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
+        {%- endfor -%}
+      {% endcapture %}
+      {% if post.host == host %}
+      <li>
+        <div class="Home-posts-post">
+          <a class="Home-posts-post-title" href="{{ post.url }}">
+            {{ post.title }}
+          </a>
+          ({{components}})
+        </div>
+      </li>
+      {%- endif -%}
+    {% endfor %}
+    </ul>
+  </div>
 {% endfor %}
 </div>
