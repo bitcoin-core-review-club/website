@@ -11,12 +11,24 @@ layout: default
 <section>
   <div class="post-content">
     <h1>{{ page.title }} ({{components}})</h1>
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-    <p style="font-weight:bold"><a href="https://github.com/bitcoin/bitcoin/pull/{{ page.pr }}">https://github.com/bitcoin/bitcoin/{{ page.pr }}</a></p>
-    <p class="host">Host: <a class="host" href="/meetings-hosts/#{{ page.host }}">{{ page.host }}</a> <a href="https://github.com/{{ page.host }}"><i class="fa fa-github"></i></a></p>
-    <p>{{ content }}</p>
+    <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {{ page.date | date: date_format }}
+    </time>
+    <p style="font-weight:bold">
+      <a href="https://github.com/bitcoin/bitcoin/pull/{{ page.pr }}">
+        https://github.com/bitcoin/bitcoin/{{ page.pr }}
+      </a>
+    </p>
+    <p class="host">
+      Host:
+      <a class="host" href="/meetings-hosts/#{{ page.host }}">{{ page.host }}</a>
+      <a href="https://github.com/{{ page.host }}">
+        <i class="fa fa-github"></i>
+      </a>
+    </p>
+    <p>
+      {{ content }}
+    </p>
   </div>
 </section>
