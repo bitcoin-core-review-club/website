@@ -26,23 +26,25 @@ title: Previous Meetings by Component
   </p>
 
 {% for component in components %}
-  <h3 id="{{component}}">
-    {{component}}
-  </h3>
-  <ul>
-    {% for post in site.posts %}
-    {% if post.components contains component %}
-    <li>
-      <div class="Home-posts-post">
-        <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
-        <span class="host">
-          hosted by
-          <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
-        </span>
-      </div>
-    </li>
-    {%- endif -%}
-    {% endfor %}
-  </ul>
+  <div id="{{component}}">
+    <h3>
+      {{component}}
+    </h3>
+    <ul>
+      {% for post in site.posts %}
+      {% if post.components contains component %}
+      <li>
+        <div class="Home-posts-post">
+          <a class="Home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
+          <span class="host">
+            hosted by
+            <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
+          </span>
+        </div>
+      </li>
+      {%- endif -%}
+      {% endfor %}
+    </ul>
+  </div>
 {% endfor %}
 </div>
