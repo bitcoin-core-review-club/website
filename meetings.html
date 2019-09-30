@@ -1,28 +1,24 @@
 ---
 layout: default
-title: Previous Meetings by Date
+title: Meetings by Date
 permalink: /meetings/
 ---
 
 <div class="Home">
   <h2 class="Home-posts-title">
-    Previous meetings
+    Meetings
   </h2>
   <p>
     {% include linkers/meetings-pages.md %}
   </p>
 
 {% for post in site.posts %}
-  {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
-  {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
-
   {% capture components %}
     {%- for comp in post.components -%}
       <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
     {%- endfor -%}
   {% endcapture %}
 
-  {% if posttime < nowunix %}
   <div class="Home-posts-post">
     <span class="Home-posts-post-date">
       {{ post.date | date_to_string }}
@@ -37,6 +33,5 @@ permalink: /meetings/
       <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
     </span>
   </div>
-  {%- endif -%}
 {% endfor %}
 </div>
