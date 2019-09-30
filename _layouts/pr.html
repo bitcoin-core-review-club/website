@@ -2,9 +2,15 @@
 layout: default
 ---
 
+{% capture components %}
+  {%- for comp in page.components -%}
+    <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
+  {%- endfor -%}
+{% endcapture %}
+
 <section>
   <div class="post-content">
-    <h1>{{ page.title }} ({{ page.component }})</h1>
+    <h1>{{ page.title }} ({{components}})</h1>
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
