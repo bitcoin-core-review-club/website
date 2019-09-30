@@ -72,7 +72,7 @@ title: Home
       <a href="https://github.com/bitcoin-core-review-club/bitcoin-core-review-club.github.io/issues/14">this github issue</a>.
     </p>
 
-    <h2 class="Home-posts-title">Previous meetings</h2>
+    <h2 class="Home-posts-title">Recent meetings</h2>
     {% for post in site.posts limit: 5 %}
     {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
     {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
@@ -94,7 +94,7 @@ title: Home
     {%- endif -%}
     {% endfor %}
     <p>
-      See all <a href="/meetings/">previous meetings</a>.
+      See all <a href="/meetings/">meetings</a>.
     </p>
   </div>
 
