@@ -7,7 +7,7 @@ author:
 menu:
 # Uncomment to activate the menu looping function in the header.html file under _includes
 - {name: 'Home', url: ''}
-- {name: 'Meetings', url: 'meetings.html'}
+- {name: 'Meetings', url: 'meetings/'}
 
 social:
 # Uncomment to activate the social media icon looping function in the footer.html file under _includes
