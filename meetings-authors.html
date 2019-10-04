@@ -1,0 +1,58 @@
+---
+layout: default
+title: Meetings by Author
+permalink: /meetings-authors/
+---
+
+{% capture raw_authors %}
+  {%- for meeting in site.posts -%}
+    {%- if meeting.layout == 'pr' -%}
+      {%- if meeting.authors == empty -%}
+        {% include ERROR_92_MISSING_TOPIC_CATEGORY %}
+      {%- endif -%}
+      {%- for author in meeting.authors -%}
+        {{author}}|
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endfor -%}
+{% endcapture %}
+
+{% assign authors = raw_authors | split: "|" | sort_natural | uniq %}
+
+<div class="Home">
+  <h2 class="Home-posts-title">Meetings</h2>
+  <p>{% include linkers/meetings-pages.md %}</p>
+
+  {% for author in authors %}
+    <div id="{{author}}">
+      <h3 class="meetings-index-section">
+        {{author}}
+        <a href="https://github.com/{{author}}"><i class="fa fa-github"></i></a>
+      </h3>
+      <table style="padding-left: 1.5em">
+        {% for post in site.posts %}
+          {% capture components %}
+            {%- for comp in post.components -%}
+              <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
+            {%- endfor -%}
+          {% endcapture %}
+          {% if post.authors contains author %}
+            <tr class="Home-posts-post">
+              <td class="Home-posts-post-date">
+                {{ post.date | date_to_string }}
+              </td>
+              <td class="Home-posts-post-arrow">
+                &raquo;
+              </td>
+              <td>
+                <a class="Home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
+                ({{components}})
+              </td>
+            </tr>
+          {%- endif -%}
+        {% endfor %}
+      </table>
+    </div>
+  {% endfor %}
+</div>
+<br>
