@@ -49,7 +49,7 @@ title: Home
     {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
     {% capture components %}
     {%- for comp in post.components -%}
-    <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %},{% endunless %}
+    <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
     {%- endfor -%}
     {% endcapture %}
     {% if posttime >= nowunix %}
