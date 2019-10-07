@@ -13,16 +13,30 @@ You'll need [Ruby & Jekyll](https://jekyllrb.com/docs/installation/) to run the 
 
 ## Making a Post
 
-To make a new post, make a new file in `_posts/` with a title of `YYYY-MM-DD-title-goes-here`. At the top of the file you'll want to provide the following information:
+To make a new post, run the following Ruby make command from root or the
+`_posts` directory:
 
-```md
----
-layout: post # Always post
-title: "#<PR number> <PR title>"
----
+```shell
+rake posts:new -- --pr NUMBER --host USERNAME --date YYYY-MM-DD
 ```
 
-After that, it's just simple markdown. The site will auto-generate the rest.
+or with short arguments:
+
+```shell
+rake posts:new -- -p NUMBER -h USERNAME -d YYYY-MM-DD
+```
+
+For more details/help, run:
+
+```shell
+rake posts:new -- --help
+```
+
+The `pr` and `host` arguments are required. The `date` argument is optional;
+if none is passed the meeting date will be set by default to next Wednesday.
+
+This command will create a new markdown file for the post, with metadata and
+initial Notes and Questions headers.
 
 ## Changing Site Data
 
