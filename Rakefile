@@ -4,6 +4,22 @@ require 'date'
 require 'json'
 require 'net/http'
 require 'optparse'
+require 'rake/testtask'
+
+# To run all tests:
+#   rake (or) rake test
+#
+# To run one test file:
+#   rake test TEST=test/FILENAME
+#
+# To run an individual test in a test file:
+#   rake test TEST=test/FILENAME TESTOPTS=--name=TEST_NAME
+#
+desc 'Run all tests with `rake` or `rake test`'
+task default: :test # Make test runner the default rake task.
+Rake::TestTask.new do |task|
+  task.pattern = 'test/test_*.rb'
+end
 
 # These correspond to the GitHub labels used by Bitcoin Core.
 DESIRED_COMPONENTS = [
