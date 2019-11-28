@@ -4,39 +4,40 @@ title: home
 ---
 ### A weekly review club for Bitcoin Core PRs
 
-<span class="question">What is this?</span> A weekly
-club for reviewing Bitcoin Core PRs in the Freenode `#bitcoin-core-pr-reviews`
-IRC channel at **18:00 UTC on Wednesdays**.
+<span class="question">What is this?</span> &nbsp;A weekly club for reviewing
+Bitcoin Core PRs at **18:00 UTC on Wednesdays** on IRC.
 
-<span class="question">What's it for?</span> To
-help newer contributors learn about the Bitcoin Core review process. Review Club
-is *not* primarily intended to help open PRs get merged (although that might be
-a nice side-effect).
+<span class="question">What's it for?</span> &nbsp;To help newer contributors
+learn about the Bitcoin Core review process. The review club is *not* primarily
+intended to help open PRs get merged (although that might be a nice
+side-effect).
 
-<span class="question">Who should take part?</span>
-Anyone who wants to learn about contributing to Bitcoin Core. All are welcome
-to come and ask questions!
+<span class="question">Who should take part?</span> &nbsp;Anyone who wants to
+learn about contributing to Bitcoin Core. All are welcome to come and ask
+questions!
 
-<span class="question">What's the benefit for participants?</span> Reviewing
-and testing PRs is the best way to start contributing to Bitcoin Core, but it's
-difficult to know where to start. There are hundreds of open PRs, many require
-a lot of contextual knowledge, and contributors and reviewers often use
-unfamiliar terminology. The Review Club will give you the tools and knowledge
-you need in order to take part in the Bitcoin Core review process on Github.
+<span class="question">What's the benefit for participants?</span>
+&nbsp;Reviewing and testing PRs is the best way to start contributing to Bitcoin
+Core, but it's difficult to know where to start. There are hundreds of open PRs,
+many require a lot of contextual knowledge, and contributors and reviewers often
+use unfamiliar terminology. The review club will give you the tools and
+knowledge you need in order to take part in the [Bitcoin Core review
+process](https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md#peer-review)
+on GitHub.
 
-<span class="question">How do I take part?</span> To
-take part, you should:
+<span class="question">How do I take part?</span>
 
-1. Clone the [Bitcoin repo](https://github.com/bitcoin/bitcoin), check out and
-  build the PR branch and run all tests.
+1. Clone the [Bitcoin repository](https://github.com/bitcoin/bitcoin), check out
+   and build the PR branch, and run all tests.
 2. Review the code changes and read the comments on the PR.
 3. Make a note of any questions you want to ask.
-4. Join the Freenode `#bitcoin-core-pr-reviews` IRC channel at **18:00 UTC on Wednesday**.
+4. Join the [freenode](https://webchat.freenode.net/)`#bitcoin-core-pr-reviews`
+   IRC channel at **18:00 UTC on Wednesday**.
 
-<span class="question">Who runs this?</span> [jnewbery](https://github.com/jnewbery)
-started Review Club and schedules the upcoming meetings. Individual meetings
-are hosted by a variety of Bitcoin Core contributors. See some of our [previous
-hosts](/meetings-hosts/).
+<span class="question">Who runs this?</span> &nbsp;Bitcoin Core contributor
+[jnewbery](https://github.com/jnewbery) started the review club and schedules
+the upcoming meetings. Individual meetings are hosted by a variety of Bitcoin
+Core contributors. See some of our [previous hosts](/meetings-hosts/).
 
 ## Upcoming Meetings
 
@@ -59,10 +60,10 @@ hosts](/meetings-hosts/).
   </div>{%- endif -%}
 {% endfor %}
 
-We're always looking for interesting PRs to discuss in Review Club and for
+We're always looking for interesting PRs to discuss in the review club and for
 volunteer hosts to lead the discussion:
 
-- To suggest a PR, please leave a comment on [this github
+- To suggest a PR, please leave a comment on [this GitHub
   issue](https://github.com/bitcoin-core-review-club/bitcoin-core-review-club.github.io/issues/14).
 - If you'd like to host a meeting, look at the [information for meeting
   hosts](https://github.com/bitcoin-core-review-club/bitcoin-core-review-club.github.io/blob/master/CONTRIBUTING.md)
@@ -100,7 +101,10 @@ See all [meetings](/meetings/).
   and [Up For
   Grabs](https://github.com/bitcoin/bitcoin/issues?utf8=%e2%9c%93&q=label%3a%22up+for+grabs%22)
   list.
-- Read the [Bitcoin Core Developer and Productivity Tips](https://github.com/bitcoin/bitcoin/blob/master/doc/productivity.md).
+- Read the Bitcoin Core [Developer
+  Notes](https://github.com/bitcoin/bitcoin/blob/master/doc/developer-notes.md)
+  and [Productivity
+  Tips](https://github.com/bitcoin/bitcoin/blob/master/doc/productivity.md).
 - Brush up on your C++. There are [many primers and reference manuals
   available](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list).
 - Read the blog posts on contributing to Bitcoin Core from [Jimmy
