@@ -6,8 +6,14 @@ require 'net/http'
 require 'optparse'
 
 UNDESIRED_LABELS = [
-  'refactoring', 'needs conceptual review', 'needs rebase', 'waiting for author'
+  'feature',
+  'needs conceptual review',
+  'needs rebase',
+  'refactor',
+  'refactoring',
+  'waiting for author',
 ].freeze
+
 GITHUB_API_URL = 'https://api.github.com/repos/bitcoin/bitcoin/pulls'
 HTTP_SUCCESS  = '200'
 HTTP_NOTFOUND = '404'
