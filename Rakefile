@@ -5,9 +5,31 @@ require 'json'
 require 'net/http'
 require 'optparse'
 
-UNDESIRED_LABELS = [
-  'refactoring', 'needs conceptual review', 'needs rebase', 'waiting for author'
+DESIRED_COMPONENTS = [
+  'Build system',
+  'Config',
+  'Consensus',
+  'Descriptors',
+  'Docs',
+  'GUI',
+  'Logging',
+  'Mempool',
+  'Mining',
+  'Net processing',
+  'P2P',
+  'Policy',
+  'PSBT',
+  'Resource usage',
+  'RPC/REST/ZMQ',
+  'Scripts and tools',
+  'Tests',
+  'TX fees and policy',
+  'Utils/log/libs',
+  'UTXO Db and Indexes',
+  'Validation',
+  'Wallet',
 ].freeze
+
 GITHUB_API_URL = 'https://api.github.com/repos/bitcoin/bitcoin/pulls'
 HTTP_SUCCESS  = '200'
 HTTP_NOTFOUND = '404'
@@ -137,5 +159,5 @@ def create_post_file!(filename, response, date, host)
 end
 
 def parse_components(labels)
-  (labels.map { |label| label['name'].downcase }) - UNDESIRED_LABELS
+  (labels.map { |label| label['name'].downcase }) & DESIRED_COMPONENTS.map(&:downcase)
 end
