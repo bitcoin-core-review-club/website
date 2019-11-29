@@ -52,7 +52,7 @@ Core contributors. See some of our [previous hosts](/meetings-hosts/).
   {% if posttime >= nowunix %}<div class="home-posts-post">
     <span class="home-posts-post-date">{{ post.date | date_to_string }}</span>
     <span class="home-posts-post-arrow">&raquo;</span>
-    <a class="home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
+    <a class="home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
     ({{components}})
     <span class="host">hosted by
       <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
@@ -82,7 +82,7 @@ volunteer hosts to lead the discussion:
   {% if posttime < nowunix %}<div class="home-posts-post">
     <span class="home-posts-post-date">{{ post.date | date_to_string }}</span>
     <span class="home-posts-post-arrow">&raquo;</span>
-    <a class="home-posts-post-title" href="{{ post.url }}">{{ post.title }}</a>
+    <a class="home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
     ({{components}})
     <span class="host">hosted by <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a></span>
   </div>{%- endif -%}
