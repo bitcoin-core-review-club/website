@@ -93,7 +93,7 @@ See all [meetings](/meetings/).
 ## Other Resources for New Contributors
 
 - Read the [Contributing to Bitcoin Core
-  Guide](https://github.com/bitcoin/bitcoin/blob/master/contributing.md). This
+  Guide](https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md). This
   will help you understand the process and some of the terminology we use in
   Bitcoin Core.
 - Look at the [Good First
