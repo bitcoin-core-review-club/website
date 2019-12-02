@@ -40,24 +40,30 @@ Core contributors. See some of our [previous hosts](/meetings-hosts/).
 
 ## Upcoming Meetings
 
+<table>
 {% for post in site.posts reversed %}
   {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
   {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
   {% capture components %}
-    {%- for comp in post.components -%}
-      <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
-    {%- endfor -%}
+  {%- for comp in post.components -%}
+    <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
+  {%- endfor -%}
   {% endcapture %}
-  {% if posttime >= nowunix %}<div class="home-posts-post">
-    <span class="home-posts-post-date">{{ post.date | date_to_string }}</span>
-    <span class="home-posts-post-arrow">&raquo;</span>
-    <a class="home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
-    ({{components}})
-    <span class="host">hosted by
-      <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
-    </span>
-  </div>{%- endif -%}
+  {% if posttime >= nowunix %}
+    <tr>
+      <div class="home-posts-post">
+        <td><span class="home-posts-post-date">{{ post.date | date_to_string }}</span></td>
+        <td><span class="home-posts-post-arrow">&raquo;</span></td>
+        <td><a class="home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
+        ({{components}})
+        <span class="host">hosted by
+        <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
+        </span></td>
+      </div>
+    </tr>
+  {%- endif -%}
 {% endfor %}
+</table>
 
 We're always looking for interesting PRs to discuss in the review club and for
 volunteer hosts to lead the discussion:
@@ -70,6 +76,7 @@ volunteer hosts to lead the discussion:
 
 ## Recent Meetings
 
+<table>
 {% for post in site.posts limit: 5 %}
   {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
   {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
@@ -78,14 +85,19 @@ volunteer hosts to lead the discussion:
     <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %},{% endunless %}
   {%- endfor -%}
   {% endcapture %}
-  {% if posttime < nowunix %}<div class="home-posts-post">
-    <span class="home-posts-post-date">{{ post.date | date_to_string }}</span>
-    <span class="home-posts-post-arrow">&raquo;</span>
-    <a class="home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
-    ({{components}})
-    <span class="host">hosted by <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a></span>
-  </div>{%- endif -%}
+  {% if posttime < nowunix %}
+    <tr>
+      <div class="home-posts-post">
+        <td><span class="home-posts-post-date">{{ post.date | date_to_string }}</span></td>
+        <td><span class="home-posts-post-arrow">&raquo;</span></td>
+        <td><a class="home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
+        ({{components}})
+        <span class="host">hosted by <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a></span></td>
+      </div>
+    </tr>
+  {%- endif -%}
 {% endfor %}
+</table>
 
 See all [meetings](/meetings/).
 
