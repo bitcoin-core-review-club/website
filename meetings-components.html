@@ -28,24 +28,28 @@ permalink: /meetings-components/
 
 {% for component in components %}
   <div id="{{component}}">
-    <h3>
-      {{component}}
-    </h3>
-    <ul>
+    <h3 class="month">{{component}}</h3>
+    <table style="padding-left: 1.5em">
       {% for post in site.posts %}
-      {% if post.components contains component %}
-      <li>
-        <div class="Home-posts-post">
-          <a class="Home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
-          <span class="host">
-            hosted by
-            <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
-          </span>
-        </div>
-      </li>
-      {%- endif -%}
+        {% if post.components contains component %}
+        <div class="Home-posts-post"><tr>
+          <td><span class="Home-posts-post-date">
+            {{ post.date | date_to_string }}
+          </span></td>
+          <td><span class="Home-posts-post-arrow">
+            &raquo;
+          </span></td>
+          <td>
+            <a class="Home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
+            <span class="host">
+              hosted by
+              <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
+            </span>
+          </td>
+        </tr></div>
+        {%- endif -%}
       {% endfor %}
-    </ul>
+    </table>
   </div>
 {% endfor %}
 </div>
