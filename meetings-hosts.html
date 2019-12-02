@@ -27,11 +27,11 @@ permalink: /meetings-hosts/
 
 {% for host in hosts %}
   <div id="{{host}}">
-    <h3>
+    <h3 class="month">
       {{host}}
       <a href="https://github.com/{{host}}"><i class="fa fa-github"></i></a>
     </h3>
-    <ul>
+    <table style="padding-left: 1.5em">
     {% for post in site.posts %}
       {% capture components %}
         {%- for comp in post.components -%}
@@ -39,17 +39,21 @@ permalink: /meetings-hosts/
         {%- endfor -%}
       {% endcapture %}
       {% if post.host == host %}
-      <li>
-        <div class="Home-posts-post">
-          <a class="Home-posts-post-title" href="{{ post.url }}">
-            #{{ post.pr }} {{ post.title }}
-          </a>
+      <tr><div class="Home-posts-post">
+        <td><span class="Home-posts-post-date">
+          {{ post.date | date_to_string }}
+        </span></td>
+        <td><span class="Home-posts-post-arrow">
+          &raquo;
+        </span></td>
+        <td>
+          <a class="Home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
           ({{components}})
-        </div>
-      </li>
+        </td>
+      </div><tr>
       {%- endif -%}
     {% endfor %}
-    </ul>
+    </table>
   </div>
 {% endfor %}
 </div>
