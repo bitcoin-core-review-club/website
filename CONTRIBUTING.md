@@ -81,6 +81,11 @@ Some tips for hosting a great Review Club meeting:
 - Have fun, and pat yourself on the back for making Bitcoin protocol development
   stronger and more decentralized 🚀
 
+### After the Meeting
+
+- Don't forget to open a PR right after your session to add the meeting log to
+  the post! You can name your PR something like `n<PR number>: add meeting log`.
+
 ## Making a New Post
 
 To make a new post, run the following Ruby make command from root or the
