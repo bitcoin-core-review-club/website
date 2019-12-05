@@ -5,51 +5,51 @@ permalink: /meetings-components/
 ---
 
 {% capture raw_components %}
-{%- for meeting in site.posts -%}
-  {%- if meeting.layout == 'pr' -%}
-    {%- if meeting.components == empty -%}
-      {% include ERROR_92_MISSING_TOPIC_CATEGORY %}
+  {%- for meeting in site.posts -%}
+    {%- if meeting.layout == 'pr' -%}
+      {%- if meeting.components == empty -%}
+        {% include ERROR_92_MISSING_TOPIC_CATEGORY %}
+      {%- endif -%}
+      {%- for component in meeting.components -%}
+        {{component}}|
+      {%- endfor -%}
     {%- endif -%}
-    {%- for component in meeting.components -%}
-      {{component}}|
-    {%- endfor -%}
-  {%- endif -%}
-{%- endfor -%}
+  {%- endfor -%}
 {% endcapture %}
+
 {% assign components = raw_components | split: "|" | sort_natural | uniq %}
 
 <div class="Home">
-  <h2 class="Home-posts-title">
-    Meetings
-  </h2>
-  <p>
-    {% include linkers/meetings-pages.md %}
-  </p>
+  <h2 class="Home-posts-title">Meetings</h2>
+  <p>{% include linkers/meetings-pages.md %}</p>
 
-{% for component in components %}
-  <div id="{{component}}">
-    <h3 class="month">{{component}}</h3>
-    <table style="padding-left: 1.5em">
-      {% for post in site.posts %}
-        {% if post.components contains component %}
-        <div class="Home-posts-post"><tr>
-          <td><span class="Home-posts-post-date">
-            {{ post.date | date_to_string }}
-          </span></td>
-          <td><span class="Home-posts-post-arrow">
-            &raquo;
-          </span></td>
-          <td>
-            <a class="Home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
-            <span class="host">
-              hosted by
-              <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
-            </span>
-          </td>
-        </tr></div>
-        {%- endif -%}
-      {% endfor %}
-    </table>
-  </div>
-{% endfor %}
+  {% for component in components %}
+    <div id="{{component}}">
+      <h3 class="month">{{component}}</h3>
+      <table style="padding-left: 1.5em">
+        {% for post in site.posts %}
+          {% if post.components contains component %}
+            <div class="Home-posts-post">
+              <tr>
+                <td class="Home-posts-post-date">
+                  {{ post.date | date_to_string }}
+                </td>
+                <td class="Home-posts-post-arrow">
+                  &raquo;
+                </td>
+                <td>
+                  <a class="Home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
+                  <span class="host">
+                    hosted by
+                    <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
+                  </span>
+                </td>
+              </tr>
+            </div>
+          {%- endif -%}
+        {% endfor %}
+      </table>
+    </div>
+  {% endfor %}
 </div>
+<br>
