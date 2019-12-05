@@ -5,44 +5,45 @@ permalink: /meetings/
 ---
 
 <div class="Home">
+  <h2 class="Home-posts-title">Meetings</h2>
+  <p>{% include linkers/meetings-pages.md %}</p>
 
-<h2 class="Home-posts-title"> Meetings </h2>
+  {% for post in site.posts %}
+    {% capture components %}
+      {%- for comp in post.components -%}
+        <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
+      {%- endfor -%}
+    {% endcapture %}
 
-<p>{% include linkers/meetings-pages.md %}</p>
+    {% capture month_year %}{{ post.date | date: "%b %Y" }}{% endcapture %}
 
-{% for post in site.posts %}
-  {% capture components %}
-    {%- for comp in post.components -%}
-      <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
-    {%- endfor -%}
-  {% endcapture %}
+    {% if month_year != lastmy %}
+      {% if lastmy != nil %}</table></div>{% endif %}
+      <div id="{{ post.date | date: "%b%Y" }}">
+        <h3 class="month">{{ month_year }}</h3>
+        <table style="padding-left: 1.5em;">
+    {% endif %}
 
-  {% capture month_year %}{{ post.date | date: "%b %Y" }}{% endcapture %} 
-  {% if month_year != lastmy %}
-    {% if lastmy != nil %}</table></div>{% endif %}
-    <div id="{{ post.date | date: "%b%Y" }}">
-    <h3 class="month">{{ month_year }}</h3>
-    <table style="padding-left: 1.5em">
-  {% endif %}
-  {% assign lastmy = month_year %}
+    {% assign lastmy = month_year %}
 
-  <tr><div class="Home-posts-post">
-    <td><span class="Home-posts-post-date">
-      {{ post.date | date_to_string }}
-    </span></td>
-    <td><span class="Home-posts-post-arrow">
-      &raquo;
-    </span></td>
-    <td>
-      <a class="Home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
-      ({{components}})
-      <span class="host">
-        hosted by
-        <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
-      </span>
-    </td>
-  </div></tr>
-{% endfor %}
-</table>
+    <tr class="Home-posts-post">
+      <td class="Home-posts-post-date">
+        {{ post.date | date_to_string }}
+      </td>
+      <td class="Home-posts-post-arrow">
+        &raquo;
+      </td>
+      <td>
+        <a class="Home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
+        ({{components}})
+        <span class="host">
+          hosted by
+          <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
+        </span>
+      </td>
+    </tr>
+  {% endfor %}
+  </table>
+  </div>
 </div>
-</div>
+<br>
