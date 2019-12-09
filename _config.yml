@@ -8,7 +8,10 @@ sass:
   sass_dir: assets/css
   style: :compressed
 
-# Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           "Bitcoin Core PR Review Club"
-description:	       "A weekly review club for Bitcoin Core PRs"
-author:              "John Newbery"
+# Site settings
+title:             "Bitcoin Core PR Review Club"
+description:       "A weekly review club for Bitcoin Core PRs"
+author:            "Bitcoin Core PR Review Club contributors"
+meeting_time:      "18:00 UTC"
+meeting_day:       "Wednesday"
+meeting_location:  "#bitcoin-core-pr-reviews IRC channel on <a href=\"https://webchat.freenode.net\">freenode</a>"
