@@ -25,7 +25,7 @@ permalink: /meetings-components/
 
   {% for component in components %}
     <div id="{{component}}">
-      <h3 class="month">{{component}}</h3>
+      <h3 class="meetings-index-section">{{component}}</h3>
       <table style="padding-left: 1.5em">
         {% for post in site.posts %}
           {% if post.components contains component %}
