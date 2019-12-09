@@ -5,7 +5,7 @@ title: home
 ### A weekly review club for Bitcoin Core PRs
 
 <span class="question">What is this?</span> &nbsp;A weekly club for reviewing
-Bitcoin Core PRs at **18:00 UTC on Wednesdays** on IRC.
+Bitcoin Core PRs at **{{ site.meeting_time }} on {{ site.meeting_day }}s** on IRC.
 
 <span class="question">What's it for?</span> &nbsp;To help newer contributors
 learn about the Bitcoin Core review process. The review club is *not* primarily
@@ -31,8 +31,7 @@ on GitHub.
    and build the PR branch, and run all tests.
 2. Review the code changes and read the comments on the PR.
 3. Make a note of any questions you want to ask.
-4. Join the [freenode](https://webchat.freenode.net/)`#bitcoin-core-pr-reviews`
-   IRC channel at **18:00 UTC on Wednesday**.
+4. Join the {{ site.meeting_location }} at **{{ site.meeting_time }} on {{ site.meeting_day }}**.
 
 <span class="question">Who runs this?</span> &nbsp;Bitcoin Core contributor
 [jnewbery](https://github.com/jnewbery) started the review club and schedules
