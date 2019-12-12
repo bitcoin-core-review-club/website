@@ -147,7 +147,7 @@ def create_post_file!(filename, response, date, host)
     line.puts '---'
     line.puts 'layout: pr'
     line.puts "date: #{date}"
-    line.puts "title: \"#{response['title']}\""
+    line.puts "title: #{parse_title(response['title'])}"
     line.puts "pr: #{response['number']}"
     line.puts "authors: [#{response.dig('user', 'login')}]"
     line.puts "components: #{parse_components(response['labels'])}"
@@ -156,6 +156,10 @@ def create_post_file!(filename, response, date, host)
     line.puts "## Notes\n\n"
     line.puts "## Questions\n"
   end
+end
+
+def parse_title(title)
+  "\"#{title.gsub(/"/,  '')}\""
 end
 
 def parse_components(labels)
