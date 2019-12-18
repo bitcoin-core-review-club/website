@@ -40,30 +40,10 @@ Core contributors. See some of our [previous hosts](/meetings-hosts/).
 
 ## Upcoming Meetings
 
-<table>
-{% for post in site.posts reversed %}
-  {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
-  {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
-  {% capture components %}
-  {%- for comp in post.components -%}
-    <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
-  {%- endfor -%}
-  {% endcapture %}
-  {% if posttime >= nowunix %}
-    <tr>
-      <div class="home-posts-post">
-        <td class="Home-posts-post-date">{{ post.date | date_to_string }}</td>
-        <td class="Home-posts-post-arrow">&raquo;</td>
-        <td><a class="Home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
-        ({{components}})
-        <span class="host">hosted by
-        <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
-        </span></td>
-      </div>
-    </tr>
-  {%- endif -%}
-{% endfor %}
-</table>
+_Bitcoin Core review club is taking a break for the holidays. The next meeting
+will be on January 8. Check our [twitter
+feed](https://twitter.com/BitcoinCorePRs) for the announcement of the next
+meeting._
 
 We're always looking for interesting PRs to discuss in the review club and for
 volunteer hosts to lead the discussion:
