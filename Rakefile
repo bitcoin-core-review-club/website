@@ -145,14 +145,22 @@ rescue *HTTP_ERRORS => e
 end
 
 def create_post_file!(filename, response, date, host)
+  title = parse_title(response['title'])
+  components = parse_valid_components(response['labels'])
+
+  puts "GitHub PR title:  \"#{response['title']}\""
+  puts "Parsed PR title:  #{title}"
+  puts "GitHub PR labels: \"#{parse_components(response['labels']).join(', ')}\""
+  puts "Parsed PR labels: \"#{components.join(', ')}\""
+
   File.open(filename, 'w') do |line|
     line.puts '---'
     line.puts 'layout: pr'
     line.puts "date: #{date}"
-    line.puts "title: #{parse_title(response['title'])}"
+    line.puts "title: #{title}"
     line.puts "pr: #{response['number']}"
     line.puts "authors: [#{response.dig('user', 'login')}]"
-    line.puts "components: #{parse_components(response['labels'])}"
+    line.puts "components: #{components}"
     line.puts "host: #{host}"
     line.puts "---\n\n"
     line.puts "## Notes\n\n"
@@ -180,5 +188,9 @@ def is_a_component?(prefix)
 end
 
 def parse_components(labels)
-  (labels.map { |label| label['name'].downcase }) & COMPONENTS
+  (labels.map { |label| label['name'].downcase })
+end
+
+def parse_valid_components(labels)
+  parse_components(labels) & COMPONENTS
 end
