@@ -161,8 +161,22 @@ def create_post_file!(filename, response, date, host)
 end
 
 def parse_title(title)
+  first, *rest = title.split # e.g. if title = "a b c", first = "a", rest = ["b", "c"]
+  first.downcase! # mutate first word to lowercase in place
+  prefix = first.gsub(/[:\[\]]/, '') # prefix is first word stripped of :[] chars
+
+  # If prefix is different from first word and is a component, set title to the rest.
+  title = rest.join(' ') if first != prefix && is_a_component?(prefix)
+
   # Return title enclosed in double quotes after removing any double quotes.
   "\"#{title.gsub(/"/,  '')}\""
+end
+
+def is_a_component?(prefix)
+  # Boolean indicating whether `prefix` (without any final "s") is a component.
+  # Iterates through the COMPONENTS array and exits with true at the first
+  # instance where `prefix` is a substring of the component; otherwise false.
+  COMPONENTS.any? { |component| component.include?(prefix.chomp('s')) }
 end
 
 def parse_components(labels)
