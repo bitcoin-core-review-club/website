@@ -30,6 +30,8 @@ DESIRED_COMPONENTS = [
   'Wallet',
 ].freeze
 
+COMPONENTS = DESIRED_COMPONENTS.map(&:downcase).freeze
+
 GITHUB_API_URL = 'https://api.github.com/repos/bitcoin/bitcoin/pulls'
 HTTP_SUCCESS  = '200'
 HTTP_NOTFOUND = '404'
@@ -159,9 +161,10 @@ def create_post_file!(filename, response, date, host)
 end
 
 def parse_title(title)
+  # Return title enclosed in double quotes after removing any double quotes.
   "\"#{title.gsub(/"/,  '')}\""
 end
 
 def parse_components(labels)
-  (labels.map { |label| label['name'].downcase }) & DESIRED_COMPONENTS.map(&:downcase)
+  (labels.map { |label| label['name'].downcase }) & COMPONENTS
 end
