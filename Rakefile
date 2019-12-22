@@ -5,6 +5,7 @@ require 'json'
 require 'net/http'
 require 'optparse'
 
+# These correspond to the GitHub labels used by Bitcoin Core.
 DESIRED_COMPONENTS = [
   'Build system',
   'Config',
@@ -29,8 +30,12 @@ DESIRED_COMPONENTS = [
   'Validation',
   'Wallet',
 ].freeze
-
 COMPONENTS = DESIRED_COMPONENTS.map(&:downcase).freeze
+
+# Some PRs contain undesired words (here, single characters) immediately after
+# the prefix. Run `rake -- posts:new --host username --pr 16729` for an example.
+# Characters or words we want removed after the prefix can go into this array.
+UNDESIRED_PR_TITLE_WORDS = %w(- _).freeze
 
 GITHUB_API_URL = 'https://api.github.com/repos/bitcoin/bitcoin/pulls'
 HTTP_SUCCESS  = '200'
@@ -171,13 +176,17 @@ end
 def parse_title(title)
   first, *rest = title.split # e.g. if title = "a b c", first = "a", rest = ["b", "c"]
   first.downcase! # mutate first word to lowercase in place
+  rest.shift if UNDESIRED_PR_TITLE_WORDS.include?(rest[0]) # rm 1st word if undesired
   prefix = first.gsub(/[:\[\]]/, '') # prefix is first word stripped of :[] chars
 
-  # If prefix is different from first word and is a component, set title to the rest.
-  title = rest.join(' ') if first != prefix && is_a_component?(prefix)
-
-  # Return title enclosed in double quotes after removing any double quotes.
-  "\"#{title.gsub(/"/,  '')}\""
+  # If prefix is different from first word and is a component, drop first word.
+  words = if first != prefix && is_a_component?(prefix)
+            [rest.first&.capitalize] + rest[1..-1]
+          else
+            [first&.capitalize] + rest
+          end
+  # Return enclosed in double quotes after joining words and removing any double quotes.
+  "\"#{words.join(' ').gsub(/"/,  '')}\""
 end
 
 def is_a_component?(prefix)
