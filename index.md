@@ -42,14 +42,12 @@ Core contributors. See some of our [previous hosts](/meetings-hosts/).
 
 <table>
 {% for post in site.posts reversed %}
-  {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
-  {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
   {% capture components %}
   {%- for comp in post.components -%}
     <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
   {%- endfor -%}
   {% endcapture %}
-  {% if posttime >= nowunix %}
+  {% if post.status == "upcoming" %}
     <tr>
       <div class="home-posts-post">
         <td class="Home-posts-post-date">{{ post.date | date_to_string }}</td>
@@ -78,14 +76,12 @@ volunteer hosts to lead the discussion:
 
 <table>
 {% for post in site.posts limit: 5 %}
-  {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
-  {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
   {% capture components %}
   {%- for comp in post.components -%}
     <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %},{% endunless %}
   {%- endfor -%}
   {% endcapture %}
-  {% if posttime < nowunix %}
+  {% if post.status == "past" %}
     <tr>
       <div class="home-posts-post">
         <td class="Home-posts-post-date">{{ post.date | date_to_string }}</td>

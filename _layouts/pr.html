@@ -14,9 +14,7 @@ layout: default
     <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {{ page.date | date: date_format }}
-      {% capture nowunix %}{{'now' | date: "%s"}}{% endcapture %}
-      {% capture posttime %}{{page.date | date: '%s'}}{% endcapture %}
-      {% if posttime >= nowunix %}
+      {% if page.status == "upcoming" %}
         {{ site.meeting_time }}
         at
         {{ site.meeting_location }}

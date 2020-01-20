@@ -167,6 +167,7 @@ def create_post_file!(filename, response, date, host)
     line.puts "authors: [#{response.dig('user', 'login')}]"
     line.puts "components: #{components}"
     line.puts "host: #{host}"
+    line.puts "status: upcoming"
     line.puts "---\n\n"
     line.puts "## Notes\n\n"
     line.puts "## Questions\n"
