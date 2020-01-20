@@ -96,6 +96,13 @@ One of the review club maintainers will:
 
 - Change the `status` of the meeting post to `past`.
 
+- (optionally) push a tag of the branch at the time of the meeting to the
+  [PR Review Club Bitcoin repo](https://github.com/bitcoin-core-review-club/bitcoin)
+  and add a `commit` variable to the PR page to add a link to the branch. This
+  is so if the PR branch changes drastically after the review club meeting,
+  people reading the notes and log later can see the branch as it was at the time
+  of the meeting.
+
 ## Making a New Post
 
 To make a new post, run the following Ruby make command from root or the
