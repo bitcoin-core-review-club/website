@@ -86,6 +86,16 @@ Some tips for hosting a great review club meeting:
 - Have fun, and pat yourself on the back for making Bitcoin protocol development
   stronger and more decentralized 🚀
 
+### After the Meeting
+
+One of the review club maintainers will:
+
+- Copy the meeting log to the `## Meeting Log` section of the meeting post.
+  Meeting logs should be copied exactly, but an `## Erratum` section can be
+  added to correct factual errors.
+
+- Change the `status` of the meeting post to `past`.
+
 ## Making a New Post
 
 To make a new post, run the following Ruby make command from root or the
