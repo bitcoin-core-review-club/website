@@ -35,6 +35,11 @@ Some tips for hosting a great review club meeting:
   understand the PR will make you feel more relaxed during the meeting and
   will pay dividends even months later.
 
+- If you find yourself struggling with writing the notes and questions, having
+  them ready by Friday, or choosing what areas to focus on, don't hesitate to
+  ask for help. Communicate, anticipate, and synchronize to ensure everyone is
+  on the same page and the notes and questions are up on time.
+
 - It can be useful to write out some anticipated answers/links/references
   before the meeting so you don't have to type them in the moment.
 
@@ -59,6 +64,10 @@ Some tips for hosting a great review club meeting:
   about a quick y/n from everyone") establishes who will probably be
   asking/answering the more interesting questions.
 
+- Move quickly at the start of the meeting to get to the interesting parts of
+  the PR as soon as possible — preferably by the 3-minute mark. When in doubt,
+  keep it progressing to the deeper aspects of the PR and subject.
+
 - Don't be distressed if people haven't had a chance to review the PR yet. This
   is a voluntary meeting and most people have a lot of other commitments.
 
@@ -70,7 +79,8 @@ Some tips for hosting a great review club meeting:
   positively ("please describe how X works") rather than negatively ("Does
   anyone not know how X works?").
 
-- When hosting, it sometimes feels like there are minutes of silence and no-one
+- Once the meeting has reached the challenging questions,
+  it sometimes feels like there are minutes of silence and no one
   is out there. Be patient and don't worry! It takes people a bit of time to
   formulate their thoughts and type them out.
 
