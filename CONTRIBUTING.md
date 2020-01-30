@@ -100,18 +100,55 @@ Some tips for hosting a great review club meeting:
 
 One of the review club maintainers will:
 
-- Copy the meeting log to the `## Meeting Log` section of the meeting post.
-  Meeting logs should be copied exactly, but an `## Erratum` section can be
-  added to correct factual errors.
+- Uncomment the `## Meeting Log` markup in the meeting post and copy-paste the
+  meeting log into it.  Meeting logs should be copied exactly, but an `##
+  Erratum` section can be added to correct factual errors.
 
-- Change the `status` of the meeting post to `past`.
+- Change the `status` of the meeting post from `upcoming` to `past`.
+  ```diff
+  -status: upcoming
+  +status: past
+  ```
 
-- (optionally) push a tag of the branch at the time of the meeting to the
-  [PR Review Club Bitcoin repo](https://github.com/bitcoin-core-review-club/bitcoin)
-  and add a `commit` variable to the PR page to add a link to the branch. This
-  is so if the PR branch changes drastically after the review club meeting,
-  people reading the notes and log later can see the branch as it was at the time
-  of the meeting.
+- Add the first 7 characters of the PR commit hash at HEAD to the meeting post.
+  This adds a link to the tagged branch that you'll make in the next step.
+  ```diff
+  -commit:
+  +commit: eebaca7
+  ```
+
+- Push a tag of the branch at the time of the meeting to the [PR Review Club
+  Bitcoin repo](https://github.com/bitcoin-core-review-club/bitcoin). This is so
+  if the PR branch changes after the review club meeting, people reading the
+  notes and log later can see the branch as it was at the time of the meeting.
+
+  - Run these steps from the root of your local bitcoin repo.
+    ```
+    cd bitcoin
+    ```
+
+  - The first time you do this, you'll need to add the [review club bitcoin
+    repo](https://github.com/bitcoin-core-review-club/bitcoin) (here we name it
+    `review-club`) to your git remotes, either via HTTPS...
+    ```
+    git remote add review-club https://github.com/bitcoin-core-review-club/bitcoin.git
+    ```
+    ...or SSH.
+    ```
+    git remote add review-club git@github.com:bitcoin-core-review-club/bitcoin.git
+    ```
+
+  - Create a tag for the review PR (using the same PR commit hash as in the
+    preceding step).
+    ```
+    git checkout <PR commit hash>    # e.g. git checkout eebaca7
+    git tag pr<number>               # e.g. git tag pr17487
+    ```
+
+  - Push the new tag.
+    ```
+    git push review-club pr<number>  # e.g. git push review-club pr17487
+    ```
 
 ## Making a New Post
 
