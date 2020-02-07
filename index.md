@@ -115,6 +115,6 @@ See all [meetings](/meetings/).
 - Brush up on your C++. There are [many primers and reference manuals
   available](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list).
 - Read the blog posts on contributing to Bitcoin Core from [Jimmy
-  Song](https://bitcointechtalk.com/a-gentle-introduction-to-bitcoin-core-development-fdc95eaee6b8)
-  and [John
-  Newbery](https://bitcointechtalk.com/contributing-to-bitcoin-core-a-personal-account-35f3a594340b).
+  Song](https://bitcointechtalk.com/a-gentle-introduction-to-bitcoin-core-development-fdc95eaee6b8),
+  [John Newbery](https://bitcointechtalk.com/contributing-to-bitcoin-core-a-personal-account-35f3a594340b),
+  and [Amiti Uttarwar](https://medium.com/@amitiu/onboarding-to-bitcoin-core-7c1a83b20365).
