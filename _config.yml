@@ -15,3 +15,14 @@ author:            "Bitcoin Core PR Review Club contributors"
 meeting_time:      "18:00 UTC"
 meeting_day:       "Wednesday"
 meeting_location:  "#bitcoin-core-pr-reviews IRC channel on <a href=\"https://webchat.freenode.net\">freenode</a>"
+url: https://bitcoincore.reviews
+twitter_username: BitcoinCorePRs
+twitter:
+  card: summary
+  username: BitcoinCorePRs
+
+defaults:
+  - scope:
+      path: ""  ## all pages
+    values:
+      image: /assets/img/twitter_card.png
