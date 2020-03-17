@@ -12,7 +12,7 @@ sass:
 title:             "Bitcoin Core PR Review Club"
 description:       "A weekly review club for Bitcoin Core PRs"
 author:            "Bitcoin Core PR Review Club contributors"
-meeting_time:      "18:00 UTC"
+meeting_time:      "17:00 UTC"
 meeting_day:       "Wednesday"
 meeting_location:  "#bitcoin-core-pr-reviews IRC channel on <a href=\"https://webchat.freenode.net\">freenode</a>"
 url: https://bitcoincore.reviews
