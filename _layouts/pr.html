@@ -8,9 +8,18 @@ layout: default
   {%- endfor -%}
 {% endcapture %}
 
+{% capture authors %}
+  {%- for author in page.authors -%}
+    <a class="author" href="/meetings-authors/#{{author}}">{{author}}</a>
+    <a href="https://github.com/{{ author }}"><i class="fa fa-github"></i></a>
+    {% unless forloop.last %}, {% endunless %}
+  {%- endfor -%}
+{% endcapture %}
+
 <section>
   <div class="post-content">
     <h1>{{ page.title }} ({{components}})</h1>
+
     <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {{ page.date | date: date_format }}
@@ -20,23 +29,31 @@ layout: default
         {{ site.meeting_location }}
       {%- endif -%}
     </time>
+
     <p style="font-weight:bold">
       <a href="https://github.com/bitcoin/bitcoin/pull/{{ page.pr }}">
         https://github.com/bitcoin/bitcoin/{{ page.pr }}
       </a>
     </p>
+
     <p class="host">
       Host:
       <a class="host" href="/meetings-hosts/#{{ page.host }}">{{ page.host }}</a>
-      <a href="https://github.com/{{ page.host }}">
-        <i class="fa fa-github"></i>
-      </a>
+      <a href="https://github.com/{{ page.host }}"><i class="fa fa-github"></i></a>
+    {% unless authors == empty %}
+      &nbsp;-&nbsp;
+      <span class="author">
+        PR author{% if page.authors.size > 1 %}s{% endif %}: {{authors}}
+      </span>
+    {%- endunless -%}
     </p>
+
     {% if page.status == "past" %}
       {% if page.commit %}
       <p><em>The PR branch HEAD was <a href="https://github.com/bitcoin-core-review-club/bitcoin/tree/pr{{ page.pr }}/">{{ page.commit }}</a> at the time of this review club meeting.</em><p>
       {%- endif -%}
     {%- endif -%}
+
     <p>
       {{ content }}
     </p>
