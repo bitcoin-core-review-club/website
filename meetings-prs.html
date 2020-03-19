@@ -1,0 +1,49 @@
+---
+layout: default
+title: Meetings by PR Number
+permalink: /meetings-prs/
+---
+
+{% assign posts_by_pr_number = site.posts | sort: 'pr' | reverse %}
+
+<div class="Home">
+  <h2 class="Home-posts-title">Meetings</h2>
+  <p>{% include linkers/meetings-pages.md %}</p>
+  <div id="{{pr}}">
+    <table>
+      {% for post in posts_by_pr_number %}
+
+        {% capture components %}
+          {%- for comp in post.components -%}
+            <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
+          {%- endfor -%}
+        {% endcapture %}
+
+        {% capture authors %}
+          {%- for author in post.authors -%}
+            <a class="author" href="/meetings-authors/#{{author}}">{{author}}</a>
+            <a href="https://github.com/{{ author }}"><i class="fa fa-github"></i></a>
+            {% unless forloop.last %}, {% endunless %}
+          {%- endfor -%}
+        {% endcapture %}
+
+        {% capture this_pr_group %}{{ post.pr | divided_by: 1000 }}{% endcapture %}
+        {% if this_pr_group != last_pr_group and last_pr_group %}
+          </table>
+          <table class="padded">
+        {% endif %}
+        {% assign last_pr_group = this_pr_group %}
+
+        <tr class="Home-posts-post">
+          <td class="Home-posts-post-arrow">
+            &raquo;
+          </td>
+          <td>
+            <a class="Home-posts-post-title" href="{{ post.url }}"> <span class="Home-posts-post-pr">#{{ post.pr }}</span> {{ post.title }} </a> by {{ authors }} ({{components}})
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+<br>
