@@ -8,6 +8,12 @@
   {% assign _index_links = _index_links | append: "<a href='/meetings/'>by date</a>" %}
 {% endif %}
 
+{% if path == "meetings-prs" %}
+  {% assign _index_links = _index_links | append: " | <strong>by PR number</strong>" %}
+{% else %}
+  {% assign _index_links = _index_links | append: " | <a href='/meetings-prs/'>by PR number</a>" %}
+{% endif %}
+
 {% if path == "meetings-components" %}
   {% assign _index_links = _index_links | append: " | <strong>by component</strong>" %}
 {% else %}
