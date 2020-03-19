@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+require 'uri'
+
+# URI schemes to accept for extraction.
+URI_SCHEMES = %w(file ftp http https mailto).freeze
+
 # Regex to select lines starting with "HH:MM " time.
 HH_MM = /^([0-1][0-9]|[2][0-3]):[0-5][0-9] .*/
 
@@ -31,6 +36,11 @@ Jekyll::Hooks.register :documents, :pre_render do |post|
     name    = IRC_NICK.match(line).to_s
     nick    = name.gsub(LT_GT, '').strip
     message = CGI.escapeHTML(line[TIME_SIZE_PLUS_1 + name.size..-1])
+
+    # Extract URIs from the message and convert them to HTML links.
+    URI.extract(message, schemes = URI_SCHEMES).each do |uri|
+      message.sub!(uri, "<a href='#{uri}' target='blank'>#{uri}</a>")
+    end
 
     # Return the log line as HTML markup.
     "<table class='log-line' id='l-#{index}'>" \
