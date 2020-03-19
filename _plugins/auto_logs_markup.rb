@@ -3,7 +3,10 @@
 require 'uri'
 
 # URI schemes to accept for extraction.
-URI_SCHEMES = %w(file ftp http https mailto).freeze
+URI_SCHEMES = %w(http https).freeze
+
+# Trailing chars to remove from URIs.
+TRAILING = /[[:punct:]]+$/
 
 # Regex to select lines starting with "HH:MM " time.
 HH_MM = /^([0-1][0-9]|[2][0-3]):[0-5][0-9] .*/
@@ -39,7 +42,7 @@ Jekyll::Hooks.register :documents, :pre_render do |post|
 
     # Extract URIs from the message and convert them to HTML links.
     URI.extract(message, schemes = URI_SCHEMES).each do |uri|
-      message.sub!(uri, "<a href='#{uri}' target='blank'>#{uri}</a>")
+      message.sub!(uri, "<a href='#{uri.gsub!(TRAILING, '')}' target='blank'>#{uri}</a>")
     end
 
     # Return the log line as HTML markup.
