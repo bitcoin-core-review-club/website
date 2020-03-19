@@ -1,7 +1,9 @@
 all: build
 
-preview:
+clean:
 	bundle exec jekyll clean
+
+preview:
 	bundle exec jekyll serve --future --drafts --unpublished --incremental
 
 build:
