@@ -31,12 +31,23 @@ module Jekyll
 
     NON_BREAKING_SPACE = '&nbsp;'
 
+    COLORS = %w(brown goldenrod cadetblue chocolate cornflowerblue coral crimson
+      forestgreen darkblue firebrick blue green grey hotpink indianred indigo
+      blueviolet maroon mediumblue mediumpurple mediumseagreen navy fuchsia
+      olive orchid purple red seagreen sienna orange slateblue peru salmon teal
+      magenta steelblue rebeccapurple tomato violet darkcyan).freeze
+
+    NUM_COLORS = COLORS.size.freeze
+
     def initialize(tag_name, text, tokens)
       super
     end
 
     def render(context)
       output = super
+
+      # Reset color data for each post. Seed the index with part of the content.
+      colors, color_index = {}, (output[-256..-250] || '').bytes.sum
 
       # Loop through each line of the meeting logs.
       output.gsub!(HH_MM).with_index(1) do |line, index|
@@ -46,6 +57,8 @@ module Jekyll
         time    = line[0..TIME_SIZE]
         name    = IRC_NICK.match(line).to_s
         nick    = name.gsub(LT_GT, '').strip
+        color   = colors[nick] || (color_index = (color_index + 1) % NUM_COLORS ;
+                                   colors[nick] = COLORS[color_index])
         message = CGI.escapeHTML(line[TIME_SIZE_PLUS_1 + name.size..-1])
 
         # Extract URIs from the message and convert them to HTML links.
@@ -60,7 +73,7 @@ module Jekyll
             "<td class='log-lineno'><a href='#l-#{index}'>#{lineno}</a></td>" \
             "<td class='log-time'>#{time}</td>" \
             "<td>" \
-              "<span class='log-nick'>&lt;#{nick}&gt;</span>" \
+              "<span class='log-nick' style='color:#{color}'>&lt;#{nick}&gt;</span>" \
               "<span class='log-msg'>#{message}</span>" \
             "</td>" \
           "</tr>" \
