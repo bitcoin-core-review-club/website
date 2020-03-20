@@ -175,6 +175,9 @@ def create_post_file!(filename, response, date, host)
     line.puts "\n"
     line.puts "<!-- TODO: uncomment and add meeting log"
     line.puts "## Meeting Log\n"
+    line.puts "\n"
+    line.puts "{% irc %}"
+    line.puts "{% endirc %}"
     line.puts "--->\n"
   end
 end
