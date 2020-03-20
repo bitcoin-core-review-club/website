@@ -42,7 +42,8 @@ Jekyll::Hooks.register :documents, :pre_render do |post|
 
     # Extract URIs from the message and convert them to HTML links.
     URI.extract(message, schemes = URI_SCHEMES).each do |uri|
-      message.sub!(uri, "<a href='#{uri.gsub!(TRAILING, '')}' target='blank'>#{uri}</a>")
+      link = uri.sub(TRAILING, '') # Strip unwanted trailing punctuation
+      message.sub!(link, "<a href='#{link}' target='blank'>#{link}</a>")
     end
 
     # Return the log line as HTML markup.
