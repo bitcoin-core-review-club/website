@@ -5,8 +5,8 @@ require 'uri'
 # URI schemes to accept for extraction.
 URI_SCHEMES = %w(http https).freeze
 
-# Trailing chars to remove from URIs.
-TRAILING = /[[:punct:]]+$/
+# Trailing chars (all punctuation except "/") to remove from URIs.
+TRAILING = /[^\/[:^punct:]]+$/
 
 # Regex to select lines starting with "HH:MM " time.
 HH_MM = /^([0-1][0-9]|[2][0-3]):[0-5][0-9] .*/
