@@ -59,6 +59,7 @@ module Jekyll
         nick    = name.gsub(LT_GT, '').strip
         color   = colors[nick] || (color_index = (color_index + 1) % NUM_COLORS ;
                                    colors[nick] = COLORS[color_index])
+        nick    = "&lt;#{nick}&gt;" unless nick == ''
         message = CGI.escapeHTML(line[TIME_SIZE_PLUS_1 + name.size..-1])
 
         # Extract URIs from the message and convert them to HTML links.
@@ -73,7 +74,7 @@ module Jekyll
             "<td class='log-lineno'><a href='#l-#{index}'>#{lineno}</a></td>" \
             "<td class='log-time'>#{time}</td>" \
             "<td>" \
-              "<span class='log-nick' style='color:#{color}'>&lt;#{nick}&gt;</span>" \
+              "<span class='log-nick' style='color:#{color}'>#{nick}</span>" \
               "<span class='log-msg'>#{message}</span>" \
             "</td>" \
           "</tr>" \
