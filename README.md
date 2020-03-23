@@ -19,6 +19,23 @@ See the [CONTRIBUTING.md](CONTRIBUTING.md) doc for how to create a post for an u
 
 All site configurations are either contained in `_config.yml` or `_data/settings.yml`. Some data is duplicated between the two due to the way Jekyll injects variables, so be sure to update both.
 
+## Running the Test Suite
+
+To run all tests: `rake test` or just `rake`
+
+To run one test file: `rake TEST=test/test_rake_posts_new`
+
+To run an individual test in a test file:
+`rake TEST=test/test_rake_posts_new TESTOPTS=--name=test_rake_posts_new`
+
+Before running tests for the first time, you may need to run:
+```
+$ bundle update && gem install curb
+```
+Before running the `test_all_links` test (or all of the tests, which includes
+it), the site needs to be started up locally with `make preview`, or with `make
+clean preview` if any meeting logs were changed, to pre-render the logs through
+the `auto_logs_markup` plugin.
 
 ## Attributions
 
