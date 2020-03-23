@@ -25,6 +25,14 @@ class TestSiteContent < Minitest::Test
     @body = http.body
   end
 
+  def test_site_displays_no_empty_nicks
+    # Check that no empty nicks are displayed, e.g. "<> * luke-jr wonders..."
+    # To run only this test:
+    # rake TEST=test/test_site_content TESTOPTS=--name=test_site_displays_no_empty_nicks
+    #
+    refute @body.include? "&amp;lt;&amp;gt;"
+  end
+
   def test_all_links
     # Check the HTTP status of all URLs in the site-wide XML feed.
     # To run only this test:
