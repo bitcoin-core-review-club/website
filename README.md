@@ -28,10 +28,8 @@ To run one test file: `rake TEST=test/test_rake_posts_new`
 To run an individual test in a test file:
 `rake TEST=test/test_rake_posts_new TESTOPTS=--name=test_rake_posts_new`
 
-Before running tests for the first time, you may need to run:
-```
-$ bundle update && gem install curb
-```
+Before running tests for the first time, you may need to run `bundle update`.
+
 Before running the `test_all_links` test (or all of the tests, which includes
 it), the site needs to be started up locally with `make preview`, or with `make
 clean preview` if any meeting logs were changed, to pre-render the logs through

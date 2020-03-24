@@ -88,6 +88,3 @@ DEPENDENCIES
   minitest
   minitest-reporters
   rake
-
-BUNDLED WITH
-   2.1.4
