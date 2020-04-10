@@ -21,6 +21,16 @@ twitter:
   card: summary
   username: BitcoinCorePRs
 
+# Exclude from processing
+exclude:
+   - CONTRIBUTING.md
+   - Gemfile
+   - Gemfile.lock
+   - Makefile
+   - README.md
+   - Rakefile
+   - test/
+
 defaults:
   - scope:
       path: ""  ## all pages
