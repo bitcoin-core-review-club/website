@@ -138,16 +138,9 @@ One of the review club maintainers will:
     git remote add review-club git@github.com:bitcoin-core-review-club/bitcoin.git
     ```
 
-  - Create a tag for the review PR (using the same PR commit hash as in the
-    preceding step).
+  - Push a tag to the review-club remote
     ```
-    git checkout <PR commit hash>    # e.g. git checkout eebaca7
-    git tag pr<number>               # e.g. git tag pr17487
-    ```
-
-  - Push the new tag.
-    ```
-    git push review-club pr<number>  # e.g. git push review-club pr17487
+    git push review-club <commit hash>:/refs/tags/pr<number>  # e.g. git push review-club eebaca7:/refs/tags/pr17487
     ```
 
 ## Making a New Post
