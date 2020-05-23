@@ -27,6 +27,9 @@ Some tips for hosting a great review club meeting:
   things in the code are the way they are currently, and what PRs have touched
   that part of the code base), testing methodology and motivation for the PR.
 
+- When writing the notes, if you refer to yourself, use third person narrative
+  (e.g. your name or GitHub profile) rather than first person ("I").
+
 - Don't feel like you need to spoon-feed the attendees. Give them pointers for
   where to look in the codebase/GitHub/documentation, and let them do their
   own research from there.
