@@ -23,19 +23,19 @@ end
 
 # These correspond to the GitHub labels used by Bitcoin Core.
 DESIRED_COMPONENTS = [
+  'Block storage',
   'Build system',
-  'Config',
   'Consensus',
+  'Data corruption',
   'Descriptors',
   'Docs',
   'GUI',
-  'Logging',
   'Mempool',
   'Mining',
-  'Net processing',
   'P2P',
-  'Policy',
+  'Privacy',
   'PSBT',
+  'Refactoring',
   'Resource usage',
   'RPC/REST/ZMQ',
   'Scripts and tools',
