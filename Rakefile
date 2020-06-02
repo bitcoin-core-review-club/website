@@ -186,15 +186,16 @@ def create_post_file!(filename, response, date, host)
     line.puts "status: upcoming"
     line.puts "commit:"
     line.puts "---\n\n"
+    line.puts "_Notes and questions to follow soon!_\n\n"
+    line.puts "<!-- TODO: Before meeting, add notes and questions"
     line.puts "## Notes\n\n"
-    line.puts "## Questions\n"
-    line.puts "\n"
-    line.puts "<!-- TODO: uncomment and add meeting log"
-    line.puts "## Meeting Log\n"
-    line.puts "\n"
+    line.puts "## Questions\n\n"
+    line.puts "-->"
+    line.puts "<!-- TODO: After meeting, uncomment and add meeting log"
+    line.puts "## Meeting Log\n\n"
     line.puts "{% irc %}"
     line.puts "{% endirc %}"
-    line.puts "--->\n"
+    line.puts "-->"
   end
 end
 
