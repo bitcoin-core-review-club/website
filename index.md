@@ -75,13 +75,15 @@ volunteer hosts to lead the discussion:
 ## Recent Meetings
 
 <table>
-{% for post in site.posts limit: 5 %}
+{% assign count = 0 %}
+{% for post in site.posts %}
   {% capture components %}
   {%- for comp in post.components -%}
     <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %},{% endunless %}
   {%- endfor -%}
   {% endcapture %}
   {% if post.status == "past" %}
+    {% assign count = count | plus: 1 %}
     <tr>
       <div class="home-posts-post">
         <td class="Home-posts-post-date">{{ post.date | date_to_string }}</td>
@@ -92,6 +94,9 @@ volunteer hosts to lead the discussion:
       </div>
     </tr>
   {%- endif -%}
+  {% if count == 4 %}
+    {% break %}
+  {% endif %}
 {% endfor %}
 </table>
 
