@@ -27,11 +27,7 @@ on GitHub.
 
 <span class="question">How do I take part?</span>
 
-1. Clone the [Bitcoin repository](https://github.com/bitcoin/bitcoin), check out
-   and build the PR branch, and run all tests.
-2. Review the code changes and read the comments on the PR.
-3. Make a note of any questions you want to ask.
-4. Join the {{ site.meeting_location }} at **{{ site.meeting_time }} on {{ site.meeting_day }}**.
+Review [Attending your first PR Review Club](/your-first-meeting/)
 
 <span class="question">Who runs this?</span> &nbsp;Bitcoin Core contributor
 [jnewbery](https://github.com/jnewbery) started the review club and schedules
