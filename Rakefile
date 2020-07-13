@@ -39,6 +39,7 @@ DESIRED_COMPONENTS = [
   'Resource usage',
   'RPC/REST/ZMQ',
   'Scripts and tools',
+  'Settings',
   'Tests',
   'TX fees and policy',
   'Utils/log/libs',
