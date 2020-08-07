@@ -36,3 +36,5 @@ defaults:
       path: ""  ## all pages
     values:
       image: /assets/img/twitter_card.png
+
+permalink: :title
