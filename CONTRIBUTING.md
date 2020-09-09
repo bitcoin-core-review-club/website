@@ -40,20 +40,16 @@ Some tips for hosting a great review club meeting:
     the master branch of bitcoin/bitcoin, e.g.
     [https://github.com/bitcoin/bitcoin/blob/23d3ae7a/src/addrman.cpp#L44](https://github.com/bitcoin/bitcoin/blob/23d3ae7a/src/addrman.cpp#L44).
     You can use a short (8 character) commit id. REASON: linking directly to master
-    isn't stable because line numbers/files change over time as the HEAD commit of
-    master changes.
+    isn't stable because line numbers/files change over time.
   - for linking to code in the PR branch, ask one of the
-    bitcoin-core-review-club maintainers to add a tag of the current PR branch
-    to bitcoin-core-pr-reviews/bitcoin, and link to that branch or a commit on
-    that branch, e.g.
+    review club maintainers to add a tag of the current PR branch
+    to [bitcoin-core-review-club/bitcoin](https://github.com/bitcoin-core-review-club/bitcoin),
+    and link to that branch or a commit on that branch, e.g.
     [https://github.com/bitcoin-core-review-club/bitcoin/commit/a6ca5080#diff-be2905e2f5218ecdbe4e55637dac75f3R1751-R1754](https://github.com/bitcoin-core-review-club/bitcoin/commit/a6ca5080#diff-be2905e2f5218ecdbe4e55637dac75f3R1751-R1754).
-    You can use a short (8 character) commit id. REASON: if the PR auther modifies
+    You can use a short (8 character) commit id. REASON: if the PR author modifies
     their branch, links to the PR branch will become invalidated. If they
-    force-push and the commits are detached, those commits will eventually get
-    garbage-collected by GitHub.
-
-for code in the PR: the commit hash in the PR branch of bitcoin-core-review-club/bitcoin
-for code in master: a (recent) commit hash in the master branch of bitcoin/bitcoin
+    force-push and the commits are detached, those commits will eventually be
+    removed by GitHub.
 
 - Thorough preparation will really pay off. Taking the time to deeply
   understand the PR will make you feel more relaxed during the meeting and
