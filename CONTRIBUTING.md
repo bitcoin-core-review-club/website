@@ -160,7 +160,7 @@ One of the review club maintainers will:
 
   - Push a tag to the review-club remote
     ```
-    git push review-club <commit hash>:/refs/tags/pr<number>  # e.g. git push review-club eebaca7:/refs/tags/pr17487
+    git push review-club <commit hash>:refs/tags/pr<number>  # e.g. git push review-club eebaca7:refs/tags/pr17487
     ```
 
 ## Making a New Post
