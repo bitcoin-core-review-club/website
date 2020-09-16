@@ -4,12 +4,16 @@ Simple Jekyll site for hosting the Bitcoin Core PR Review club at https://bitcoi
 
 ## Development
 
-You'll need [Ruby & Jekyll](https://jekyllrb.com/docs/installation/) to run the site locally. Once they're setup:
+You'll need [Ruby and Jekyll](https://jekyllrb.com/docs/installation/) to run
+the site locally. Ruby 2.6 is recommended. Once they are set up:
 
 * Clone the repository and go into the directory
 * Run `bundle install`
 * Run `make preview`
 * Go to http://localhost:4000
+
+In case of any issues, don't hesitate to run the following to update rubygems,
+bundler, and dependencies: `gem update --system && gem update && bundle update`
 
 ## Making a new post
 
