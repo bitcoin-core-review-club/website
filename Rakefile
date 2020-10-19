@@ -30,6 +30,7 @@ DESIRED_COMPONENTS = [
   'Descriptors',
   'Docs',
   'GUI',
+  'Interfaces',
   'Mempool',
   'Mining',
   'P2P',
