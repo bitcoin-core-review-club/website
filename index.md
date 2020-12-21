@@ -36,9 +36,10 @@ Core contributors. See some of our [previous hosts](/meetings-hosts/).
 
 ## Upcoming Meetings
 
-🎄 The review club is taking a break for the rest of 2020. We wish everyone a very happy holidays and we'll see you all back at review club on **January 6th**! 🎄
-
 <!--
+🎄 The review club is taking a break for the rest of 2020. We wish everyone a very happy holidays and we'll see you all back at review club on **January 6th**! 🎄
+-->
+
 <table>
 {% for post in site.posts reversed %}
   {% capture components %}
@@ -51,7 +52,7 @@ Core contributors. See some of our [previous hosts](/meetings-hosts/).
       <div class="home-posts-post">
         <td class="Home-posts-post-date">{{ post.date | date_to_string }}</td>
         <td class="Home-posts-post-arrow">&raquo;</td>
-        <td><a class="Home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
+        <td><a class="Home-posts-post-title" href="{{ post.url }}">{% if post.pr %}#{{ post.pr }} {% endif %} {{ post.title }}</a>
         ({{components}})
         <span class="host">hosted by
         <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
@@ -61,7 +62,6 @@ Core contributors. See some of our [previous hosts](/meetings-hosts/).
   {%- endif -%}
 {% endfor %}
 </table>
--->
 
 We're always looking for interesting PRs to discuss in the review club and for
 volunteer hosts to lead the discussion:

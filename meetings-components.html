@@ -38,7 +38,7 @@ permalink: /meetings-components/
                   &raquo;
                 </td>
                 <td>
-                  <a class="Home-posts-post-title" href="{{ post.url }}">#{{ post.pr }} {{ post.title }}</a>
+                  <a class="Home-posts-post-title" href="{{ post.url }}">{% if post.pr %}#{{ post.pr }} {% endif %}{{ post.title }}</a>
                   <span class="host">
                     hosted by
                     <a class="host" href="/meetings-hosts/#{{post.host}}">{{ post.host }}</a>
