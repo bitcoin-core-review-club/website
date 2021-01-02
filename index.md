@@ -36,9 +36,10 @@ Core contributors. See some of our [previous hosts](/meetings-hosts/).
 
 ## Upcoming Meetings
 
-🎄 The review club is taking a break for the rest of 2020. We wish everyone a very happy holidays and we'll see you all back at review club on **January 6th**! 🎄
-
 <!--
+🎄 The review club is taking a break for the rest of 2020. We wish everyone a very happy holidays and we'll see you all back at review club on **January 6th**! 🎄
+-->
+
 <table>
 {% for post in site.posts reversed %}
   {% capture components %}
@@ -61,7 +62,6 @@ Core contributors. See some of our [previous hosts](/meetings-hosts/).
   {%- endif -%}
 {% endfor %}
 </table>
--->
 
 We're always looking for interesting PRs to discuss in the review club and for
 volunteer hosts to lead the discussion:
