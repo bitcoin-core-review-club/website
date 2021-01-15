@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# To display all the available rake (Ruby make) tasks, run:
+#   rake -T
+
 require 'date'
 require 'json'
 require 'net/http'
@@ -71,6 +74,9 @@ HTTP_ERRORS = [
   Timeout::Error
 ].freeze
 
+# To see the rake posts:new help, run:
+#   rake posts:new -- -H
+#
 desc 'Create a new post file'
 namespace :posts do
   task :new do
