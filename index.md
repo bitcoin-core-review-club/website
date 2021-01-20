@@ -79,7 +79,7 @@ volunteer hosts to lead the discussion:
 {% for post in site.posts %}
   {% capture components %}
   {%- for comp in post.components -%}
-    <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %},{% endunless %}
+    <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
   {%- endfor -%}
   {% endcapture %}
   {% if post.status == "past" %}
