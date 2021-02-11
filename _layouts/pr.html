@@ -36,6 +36,12 @@ layout: default
           https://github.com/bitcoin/bitcoin/pulls/{{ page.pr }}
         </a>
       </p>
+    {% elsif page.link %}
+      <p style="font-weight:bold">
+        <a href="{{ page.link }}">
+          {{ page.link }}
+        </a>
+      </p>
     {% endif %}
 
     <p class="host">
