@@ -23,7 +23,7 @@
 <script>
   function save() {
     const dark = document.getElementById('color-mode').checked;
-    window.localStorage.setItem('dark', dark);
+    window.localStorage.setItem('dark', String(dark));
   }
 
   const dark = window.localStorage.getItem('dark') === "true";
