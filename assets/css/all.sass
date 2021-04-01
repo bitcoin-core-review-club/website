@@ -24,6 +24,52 @@ $large-screen: 1024px
 
 /* This is an example style sheet that comes default - just delete everything after this comment this to start from a blank slate */
 
+html
+  height: 100%
+
+body
+  height: 100%
+  min-height: 100%
+
+#color-mode
+  display: none
+
+#color-mode-switch
+  user-select: none
+  right: 0
+  position: absolute
+
+// Light (default)
+#color-mode:not(:checked) ~ .site-container
+  --bg-color: white
+  --text-color: black
+  --link-color: #0000f0
+  --link-visited-color: #551b8c
+  --code-bg-color: #f5f5f5
+  --log-bg-color: #f0f0f0
+  --log-color: #808080
+  --target-color: #dddddd
+  --meeting-index-color: #606060
+
+// Dark
+#color-mode:checked ~ .site-container
+  --bg-color: black
+  --text-color: white
+  --link-color: #58a6ff
+  --link-visited-color: #824bb7
+  --code-bg-color: #565656
+  --log-bg-color: #565656
+  --log-color: #080808
+  --target-color: #3a3939
+  --meeting-index-color: #8c5e5e
+
+a
+  color: var(--link-color)
+
+a
+  &:visited
+    color: var(--link-visited-color)
+
 a
   &:hover
     color: $secondary-color
@@ -32,12 +78,18 @@ a
   max-width: 2250px
   margin: 0
   padding: 1rem 2rem 0 2rem
+  background-color: var(--bg-color)
+  color: var(--text-color)
+  min-height: 100%
+  overflow: auto
 
 .logo
   text-decoration: none
-  color: $primary-color
+  color: var(--text-color)
   font:
     size: 48px
+  a
+    color: var(--text-color)
 
 .dt-published
   color: #828282
@@ -52,7 +104,7 @@ a
   font-size: 0.95em
 
 \:target
-  background: #ddd
+  background: var(--target-color)
 
 .question
   font-size: 1.2em
@@ -61,7 +113,7 @@ a
 .meetings-index-section
   margin-top: 0.4em
   margin-bottom: 0.4em
-  color: #606060
+  color: var(--meeting-index-color)
 
 .Home-posts-post-date
   min-width: 94px
@@ -87,16 +139,16 @@ a
   vertical-align: top
 
 .log-lineno
-  background-color: #f0f0f0
+  background-color: var(--log-bg-color)
   \:target
-    background-color: #ddd
+    background-color: var(--target-color)
   a
-    color: grey
+    color: (--log-color)
     text-decoration: none
     user-select: none
 
 .log-time
-  color: blue
+  color: var(--link-color)
   padding-left: 6px
   padding-right: 6px
 
