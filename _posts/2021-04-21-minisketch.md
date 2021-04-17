@@ -1,7 +1,7 @@
 ---
 layout: pr
-date: 2021-02-17
-title: "Mnisketch C++ code"
+date: 2021-04-21
+title: "Minisketch C++ code"
 link: https://github.com/sipa/minisketch/tree/master
 authors: [sipa]
 components: ["math and cryptography"]
@@ -16,10 +16,10 @@ commit:
   the [PinSketch](https://www.cs.bu.edu/~reyzin/code/fuzzy.html) set reconciliation algorithm.
   It is the basis for the efficient relay protocol in
   [Erlay](https://arxiv.org/abs/1905.10518) (covered in a [previous review
-  club](https://bitcoincore.reviews/18261)), but is generally usable for various
+  club](/18261)), but is generally usable for various
   applications that use set reconciliation.
 
-- In yet another [previous](https://bitcoincore.reviews/minisketch-26-2) review club we covered
+- In yet another [previous](/minisketch-26-2) review club we covered
   some of the algorithms involved by looking at the
   [Python reimplementation](https://github.com/sipa/minisketch/blob/master/tests/pyminisketch.py).
   In this review club we will be looking at some of the C++ code instead that implements it
@@ -42,7 +42,7 @@ commit:
     uniform interface that minisketch.cpp can use.
 
   - There are up to 3 distinct field implementations for every field size (libminisketch
-    currently supports field sizes from 2 to 64 bits, inclusive).:
+    currently supports field sizes from 2 to 64 bits, inclusive):
 
     - The generic one that works on every platform, with common code in
       [fields/generic_common_impl.h](https://github.com/sipa/minisketch/blob/master/src/fields/generic_common_impl.h)
@@ -51,9 +51,9 @@ commit:
       as integers, found in [int_utils.h](https://github.com/sipa/minisketch/blob/master/src/int_utils).
 
     - Two ["clmul"](https://en.wikipedia.org/wiki/CLMUL_instruction_set)-based implementations that use
-      intrinsics to access special instructions, and only run on certain x86_64 CPUs. These instructions
+      intrinsics to access special instructions, and only run on certain x86/64 CPUs. These instructions
       are specifically designed to help with GF(2^n) multiplications, and they greatly improve performance
-      when available (which is the case for pretty much all x86_64 CPUs since 2013 or so).
+      when available (which is the case for pretty much all x86/64 CPUs since 2013 or so).
       One implementation is optimized for fields that have a modulus of the form `x^bits + x^a + 1`,
       while another works for any modulus. The common code for these can be found in
       [fields/clmul_common_impl.h](https://github.com/sipa/minisketch/blob/master/src/fields/clmul_common_impl.h),
