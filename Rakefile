@@ -198,6 +198,7 @@ def create_post_file!(filename, response, date, host)
     line.puts "<!-- TODO: Before meeting, add notes and questions"
     line.puts "## Notes\n\n"
     line.puts "## Questions"
+    line.puts "1. Did you review the PR? [Concept ACK, approach ACK, tested ACK, or NACK](https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md#peer-review)?"
     line.puts "-->\n\n\n"
     line.puts "<!-- TODO: After meeting, uncomment and add meeting log between the irc tags"
     line.puts "## Meeting Log\n\n"
