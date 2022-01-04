@@ -12,7 +12,7 @@ sass:
 author:            "Bitcoin Core PR Review Club contributors"
 description:       "A weekly review club for Bitcoin Core PRs"
 meeting_day:       "Wednesday"
-meeting_location:  "#bitcoin-core-pr-reviews IRC channel on <a href=\"https://kiwiirc.com/nextclient/irc.libera.chat/\">libera.chat</a>"
+meeting_location:  "#bitcoin-core-pr-reviews IRC channel on [libera.chat](https://kiwiirc.com/nextclient/irc.libera.chat/)"
 meeting_time:      "17:00 UTC"
 title:             "Bitcoin Core PR Review Club"
 twitter:
