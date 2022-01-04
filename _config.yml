@@ -11,6 +11,7 @@ sass:
 # Site settings
 author:            "Bitcoin Core PR Review Club contributors"
 coordinator:       "Bitcoin Core contributor [glozow](https://github.com/glozow)"
+coordinator_irc:   "glozow"
 description:       "A weekly review club for Bitcoin Core PRs"
 meeting_day:       "Wednesday"
 meeting_location:  "#bitcoin-core-pr-reviews IRC channel on [libera.chat](https://kiwiirc.com/nextclient/irc.libera.chat/)"
