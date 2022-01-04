@@ -1,3 +1,8 @@
+---
+layout: default
+title: Hosting a Review Club Meeting
+---
+
 # Hosting a Bitcoin Core Review Club Meeting
 
 Some tips for hosting a great review club meeting:
