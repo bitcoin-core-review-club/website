@@ -5,8 +5,6 @@ title: Hosting a Review Club Meeting
 
 # Hosting a Bitcoin Core Review Club Meeting
 
-Some tips for hosting a great review club meeting:
-
 ## Before the Meeting
 
 - Consider contacting the PR author to let them know that you're going to
@@ -19,17 +17,20 @@ Some tips for hosting a great review club meeting:
   [Making a New Post](#making-a-new-post) section below for how to make a post.
 
 - Prepare a range of questions from basic to advanced. The review club is a way
-  to help new developers develop. There should be something for everyone.
+  to help new developers learn. There should be something for everyone.
 
 - In the notes and meeting, don't just talk about the mechanical code changes.
-  Other important aspects to consider are: the historical context of the PR (why
-  things in the code are the way they are currently, and what PRs have touched
-  that part of the code base), testing methodology and motivation for the PR.
+  Other important aspects to consider are:
 
-- When writing the notes, if you refer to yourself, use third person narrative
+  - motivation for the PR
+  - the historical context of the PR (why things in the code are the way they
+    are currently, and what PRs have touched that part of the code base in the past)
+  - how to review the changes and testing methodology.
+
+- If you refer to yourself in the notes, use third person narrative
   (e.g. your name or GitHub profile) rather than first person ("I").
 
-- Don't feel like you need to spoon-feed the attendees. Give them pointers for
+- Don't spoon-feed the attendees. Give them pointers for
   where to look in the codebase/GitHub/documentation, and let them do their
   own research from there.
 
@@ -91,7 +92,8 @@ rake posts:new -- --help
 ## In the Meeting
 
 - Come with the mindset that the attendees are people who are as smart as you,
-  but don't have the context that you do in Bitcoin protocol development.
+  but don't have the context that you do in Bitcoin protocol development or
+  the Bitcoin Core codebase.
 
 - Start the meeting with `#startmeeting` and "hi" from everyone so you know
   who's at their keyboard and paying attention.
