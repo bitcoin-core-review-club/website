@@ -25,7 +25,6 @@ url:               "https://bitcoincore.reviews"
 
 # Exclude from processing
 exclude:
-   - CONTRIBUTING.md
    - Gemfile
    - Gemfile.lock
    - Makefile

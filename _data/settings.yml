@@ -7,3 +7,4 @@ menu:
 - {name: 'Home', url: ''}
 - {name: 'Meetings', url: 'meetings/'}
 - {name: 'Code of Conduct', url: 'code-of-conduct/'}
+- {name: 'Hosting', url: 'hosting/'}
