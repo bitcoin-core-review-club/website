@@ -29,10 +29,10 @@ on GitHub.
 [Attending your first PR Review Club](/your-first-meeting/) for more tips
 on how to participate.
 
-<span class="question">Who runs this?</span> &nbsp;Bitcoin Core contributor
-[jnewbery](https://github.com/jnewbery) started the review club and schedules
-the upcoming meetings. Individual meetings are hosted by a variety of Bitcoin
-Core contributors. See some of our [previous hosts](/meetings-hosts/).
+<span class="question">Who runs this?</span> &nbsp;Upcoming meetings are
+scheduled by {{ site.coordinator }}.
+The meetings are hosted by a variety of Bitcoin Core contributors. See
+some of our [previous hosts](/meetings-hosts/).
 
 ## Upcoming Meetings
 
