@@ -62,8 +62,7 @@ some of our [previous hosts](/meetings-hosts/).
 We're always looking for interesting PRs to discuss in the review club and for
 volunteer hosts to lead the discussion:
 
-- To suggest a PR, please leave a comment on [this GitHub
-  issue](https://github.com/bitcoin-core-review-club/bitcoin-core-review-club.github.io/issues/14).
+- If there's a PR that you'd like to discuss in a future meeting, feel free to suggest it in the IRC channel.
 - If you'd like to host a meeting, look at the [information for meeting
   hosts](https://github.com/bitcoin-core-review-club/bitcoin-core-review-club.github.io/blob/master/CONTRIBUTING.md)
   and contact {{ site.coordinator_irc }} on IRC.
