@@ -5,6 +5,34 @@ title: Hosting a Review Club Meeting
 
 # Hosting a Bitcoin Core Review Club Meeting
 
+## How to Choose a PR
+
+- The purpose of PR Review Club is to help new contributors learn about the
+  Bitcoin Core codebase and the process of contributing to the project. Select a PR
+  that is likely to be instructive or interesting. Don't select a PR just because
+  you want it to be merged soon!
+
+- The PRs discussed at review club should span a range of complexity
+  and difficulty levels, in order to cater to attendees with a variety of
+  different experience levels. Some attendees have only just cloned the Bitcoin
+  Core repo for the first time, and some have been contributing for months or
+  years. Having some meetings on basic PRs and others on more complex PRs ensures
+  that there's something for everyone.
+
+- Generally, try to pick PRs that don't require a very high level of contextual
+  knowledge, since it's difficult to introduce a lot of concepts in a one hour
+  meeting.
+
+- The appropriate amount of code change to discuss depends on the complexity of
+  the code. It might be fine to discuss 10-20 lines of code if the change is
+  very subtle or has complex interactions. If the change is more straightforward,
+  then it might be fine to discuss 100+ lines of code change. If the PR seems too
+  large to cover in a meeting, consider only discussing a subset of the commits,
+  or breaking up the discussion over multiple meetings.
+
+- It's fine to discuss a PR that you opened yourself. After all, you probably
+  know more about it than anyone else!
+
 ## Before the Meeting
 
 - Consider contacting the PR author to let them know that you're going to
@@ -22,10 +50,13 @@ title: Hosting a Review Club Meeting
 - In the notes and meeting, don't just talk about the mechanical code changes.
   Other important aspects to consider are:
 
-  - motivation for the PR
-  - the historical context of the PR (why things in the code are the way they
-    are currently, and what PRs have touched that part of the code base in the past)
-  - how to review the changes and testing methodology.
+  - The motivation for the PR.
+  - The historical context of the PR (why things in the code are the way they
+    are currently, and what PRs have touched that part of the code base in the past).
+  - How to review and test the changes.
+  - Advantages and disadvantages of this approach compared to alternative approaches.
+  - Potential bugs reviewers might want to look out for.
+  - Fun C++ things.
 
 - If you refer to yourself in the notes, use third person narrative
   (e.g. your name or GitHub profile) rather than first person ("I").
