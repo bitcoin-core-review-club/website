@@ -25,8 +25,8 @@ layout: default
       {{ page.date | date: date_format }}
       {% if page.status == "upcoming" %}
         {{ site.meeting_time }}
-        at
-        {{ site.meeting_location }}
+        in
+        {{ site.meeting_location }}.
       {%- endif -%}
     </time>
 

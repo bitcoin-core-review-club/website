@@ -5,7 +5,8 @@ title: home
 ### A weekly review club for Bitcoin Core PRs
 
 <span class="question">What is this?</span> &nbsp;A weekly club for reviewing
-Bitcoin Core PRs at **{{ site.meeting_time }} on {{ site.meeting_day }}s** on IRC.
+Bitcoin Core PRs at **{{ site.meeting_time }} on {{ site.meeting_day }}s** in
+{{ site.meeting_location }}.
 
 <span class="question">What's it for?</span> &nbsp;To help newer contributors
 learn about the Bitcoin Core review process. The review club is *not* primarily

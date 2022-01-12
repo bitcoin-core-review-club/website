@@ -8,7 +8,7 @@ title: Attending your first PR Review Club
 If you’re thinking about attending PR Review Club, welcome! We love new
 participants. Below is information to help you get started as a first-timer.
 
-The club meets on {{ site.meeting_day }}s at {{ site.meeting_time }} on the
+The club meets on {{ site.meeting_day }}s at {{ site.meeting_time }} in
 {{ site.meeting_location }}. Every week, a Bitcoin protocol
 developer will host a 60-minute discussion on a Bitcoin Core pull request. [The
 code of conduct](https://bitcoincore.reviews/code-of-conduct) details the
