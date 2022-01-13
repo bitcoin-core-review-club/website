@@ -5,12 +5,12 @@ title: home
 ### A weekly review club for Bitcoin Core PRs
 
 <span class="question">What is this?</span> &nbsp;A weekly club for reviewing
-Bitcoin Core PRs at **{{ site.meeting_time }} on {{ site.meeting_day }}s** on IRC.
+Bitcoin Core PRs at **{{ site.meeting_time }} on {{ site.meeting_day }}s** in
+{{ site.meeting_location }}.
 
 <span class="question">What's it for?</span> &nbsp;To help newer contributors
 learn about the Bitcoin Core review process. The review club is *not* primarily
-intended to help open PRs get merged (although that might be a nice
-side-effect).
+intended to help open PRs get merged.
 
 <span class="question">Who should take part?</span> &nbsp;Anyone who wants to
 learn about contributing to Bitcoin Core. All are welcome to come and ask
