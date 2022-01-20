@@ -9,6 +9,9 @@ permalink: /meetings/
   <p>{% include linkers/meetings-pages.md %}</p>
 
   {% for post in site.posts %}
+    {% if post.layout != "pr" %}
+      {% continue %}
+    {% endif %}
     {% capture components %}
       {%- for comp in post.components -%}
         <a href="/meetings-components/#{{comp}}">{{comp}}</a>{% unless forloop.last %}, {% endunless %}
