@@ -17,7 +17,7 @@ bundler, and dependencies: `gem update --system && gem update && bundle update`
 
 ## Making a new post
 
-See the [CONTRIBUTING.md](CONTRIBUTING.md) doc for how to create a post for an upcoming meeting.
+See the [hosting.md](hosting.md) doc for how to create a post for an upcoming meeting.
 
 ## Changing Site Data
 
