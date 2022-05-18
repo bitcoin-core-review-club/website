@@ -186,6 +186,17 @@ _This process is done by the review club maintainers_
   meeting log into it. Meeting logs should be copied exactly, but an `##
   Erratum` section can be added to correct factual errors.
 
+  - To sanitize logs exported from IRCCloud (ensure UTC timezone is selected
+    during export), use the following command on the unzipped .txt file:
+    ```sh
+    cat \#bitcoin-core-pr-reviews.txt \
+      | sed -n '/#startmeeting/h;//!H;$!d;x;//p' \
+      | sed '/#endmeeting/q' \
+      | sed '/[⇐→]/d' \
+      | cut -c 13-17,22- \
+      > sanitized_log.txt
+    ```
+
 - Change the `status` of the meeting post from `upcoming` to `past`.
   ```diff
   -status: upcoming
@@ -211,7 +222,7 @@ _This process is done by the review club maintainers_
     ```
 
   - The first time you do this, you'll need to add the review club bitcoin
-    repo to your git remotes: 
+    repo to your git remotes:
 
     ```shell
     git remote add review-club git@github.com:bitcoin-core-review-club/bitcoin.git
