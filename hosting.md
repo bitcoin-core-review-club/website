@@ -99,7 +99,7 @@ title: Hosting a Review Club Meeting
 
 #### Making a New Post
 
-Clone the website repository [located on GitHub](https://github.com/bitcoin-core-review-club/website).
+[Fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks) the website repository [located on GitHub](https://github.com/bitcoin-core-review-club/website).
 
 To make a new post, run the following Ruby make command from the website directory:
 
