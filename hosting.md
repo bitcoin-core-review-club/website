@@ -10,7 +10,7 @@ title: Hosting a Review Club Meeting
 - The purpose of PR Review Club is to help new contributors learn about the
   Bitcoin Core codebase and the process of contributing to the project. Select a PR
   that is likely to be instructive or interesting. Don't select a PR just because
-  you want it to be merged soon!
+  you want it to be merged soon! You may even select a PR that is already merged.
 
 - The PRs discussed at review club should span a range of complexity
   and difficulty levels, in order to cater to attendees with a variety of
@@ -98,6 +98,8 @@ title: Hosting a Review Club Meeting
   before the meeting so you don't have to type them in the moment.
 
 #### Making a New Post
+
+Clone the website repository [located on GitHub](https://github.com/bitcoin-core-review-club/website).
 
 To make a new post, run the following Ruby make command from the website directory:
 
