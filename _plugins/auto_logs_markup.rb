@@ -17,7 +17,7 @@ module Jekyll
     HH_MM = /^([0-1][0-9]|[2][0-3]):[0-5][0-9] .*/
 
     # Regex to select IRC <nick>.
-    IRC_NICK = /<.+?>/
+    IRC_NICK = /^(?:\s*)(<.+?>)/
 
     # Regex to select "<" and ">" chars.
     LT_GT = /[<>]/
@@ -55,7 +55,7 @@ module Jekyll
         # Separate the log line into useful parts.
         lineno  = "#{NON_BREAKING_SPACE * (LINE_DIGITS - index.to_s.size)}#{index}"
         time    = line[0..TIME_SIZE]
-        name    = IRC_NICK.match(line).to_s
+        name    = IRC_NICK.match(line[TIME_SIZE_PLUS_1..-1]).to_s
         nick    = name.gsub(LT_GT, '').strip
         color   = colors[nick] || (color_index = (color_index + 1) % NUM_COLORS ;
                                    colors[nick] = COLORS[color_index])
