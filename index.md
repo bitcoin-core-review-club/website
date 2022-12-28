@@ -59,6 +59,8 @@ some of our [previous hosts](/meetings-hosts/).
 {% endfor %}
 </table>
 
+_Note:_ Review club is on holiday break, returning on January 11, 2023.
+
 We're always looking for interesting PRs to discuss in the review club and for
 volunteer hosts to lead the discussion:
 
