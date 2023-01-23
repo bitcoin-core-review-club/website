@@ -40,9 +40,14 @@ title: Hosting a Review Club Meeting
   interested in their PR and may be prepared to answer questions and give
   you more context. They may even want to join the meeting themselves.
 
+- Post an announcement for your PR as soon as you can - preferably 2 weeks
+  before the meeting.  See the [Making a New Post](#making-a-new-post) section
+  below for how to make an announcement post.
+
 - Post notes and questions on the Friday the week before the meeting.
-  That gives attendees time to review the PR and prepare for the meeting. See the
-  [Making a New Post](#making-a-new-post) section below for how to make a post.
+  That gives attendees time to review the PR and prepare for the meeting. Please
+  open your PR by that Thursday to allow time for maintainers to review and
+  merge it before the weekend.
 
 - Prepare a range of questions from basic to advanced. The review club is a way
   to help new developers learn. There should be something for everyone.
