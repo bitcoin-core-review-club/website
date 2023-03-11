@@ -50,6 +50,7 @@ body
   --log-color: #808080
   --target-color: #dddddd
   --meeting-index-color: #606060
+  --backlinks-box-color: #f5f5f5
 
 // Dark
 #color-mode:checked ~ .site-container
@@ -62,6 +63,7 @@ body
   --log-color: #080808
   --target-color: #3a3939
   --meeting-index-color: #8c5e5e
+  --backlinks-box-color: #282727
 
 a
   color: var(--link-color)
@@ -167,3 +169,29 @@ a
   font-size: 50%
   display: flex
   align-items: flex-end
+
+.invalid-link
+  color: #444444
+  cursor: help
+  background: #fafafa
+  padding: 0 0.1em
+
+.invalid-link-brackets
+  color: #ccc
+  cursor: help
+
+.backlink-box
+  position: relative
+  font-size: 0.9em
+  background: var(--backlinks-box-color)
+  padding: 2px
+  border-radius: 4px
+  padding-top: 0.6em
+  padding-left: 3em
+
+.backlink-header
+  position: absolute
+  top: 0.2em
+  left: 0.7em
+  font-size: 0.85em
+  color: #828282

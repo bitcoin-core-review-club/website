@@ -1,0 +1,20 @@
+<side style="font-size: 0.9em">
+  {% if page.backlinks.size > 0 %}
+    <h3 style="margin-bottom: 1em; color: #828282">{{ page.backlinks.size }} Linked pages</h3>
+    <div style="display: grid; grid-gap: 1em; grid-template-columns: repeat(1fr);">
+      {% for backlink in page.backlinks %}
+        <div >
+          <a class="internal-link" style="font-size: 1.2em" href="{{ backlink.doc.url }}">{%- if backlink.doc.pr -%}#{{ backlink.doc.pr }}&nbsp;{%- endif -%}{{ backlink.doc.title }}</a><br>
+          <div style="margin-top: 0.3em; display: grid; grid-gap: 0.7em; grid-template-columns: repeat(1fr);">
+          {% for snippet in backlink.snippets %}
+            <div class="backlink-box">
+              <div class="backlink-header">{{ snippet.header }}</div>
+              {{ snippet.paragraph | link_to_anchor: backlink.doc.url | markdownify }}
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</side>
