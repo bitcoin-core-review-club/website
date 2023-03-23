@@ -177,7 +177,7 @@ def create_post_file!(filename, response, date, host)
   title = parse_title(response['title'])
   components = parse_valid_components(response['labels'])
   if components.empty?
-    puts "No labels from Github, you will need to add one manually from #{COMPONENTS}"
+    puts "No label assigned to the PR yet; you will need to add one manually from #{COMPONENTS}"
   end
 
   puts "GitHub PR title:  \"#{response['title']}\""
