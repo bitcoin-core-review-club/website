@@ -173,12 +173,26 @@ rescue *HTTP_ERRORS => e
   "Error #{e.inspect}"
 end
 
+def get_nonempty_components(gh_labels)
+  # Parses the GitHub labels, and requires user input if no valid components were found
+  components = parse_valid_components(gh_labels)
+  if components.empty?
+    puts "No label assigned to the PR yet; you will need to add one or more (comma-separated) manually from #{COMPONENTS}"
+    while true
+      components_input = gets.gsub(/['"]/, '').split(',').map(&:strip).map(&:downcase).uniq
+      if (components_input - COMPONENTS).empty?
+        break
+      end
+      puts "Components #{components_input - COMPONENTS} are invalid, please try again"
+    end
+    components = components_input
+  end
+  return components
+end
+
 def create_post_file!(filename, response, date, host)
   title = parse_title(response['title'])
-  components = parse_valid_components(response['labels'])
-  if components.empty?
-    puts "No label assigned to the PR yet; you will need to add one manually from #{COMPONENTS}"
-  end
+  components = get_nonempty_components(response['labels'])
 
   puts "GitHub PR title:  \"#{response['title']}\""
   puts "Parsed PR title:  #{title}"
