@@ -1,0 +1,9 @@
+atom:
+  href: 'feed.xml'
+  title: 'Atom Feed'
+  fa-icon: 'fa-rss'
+
+twitter:
+  href: 'https://twitter.com/bitcoincoreprs'
+  title: 'Twitter'
+  fa-icon: 'fa-twitter-square'
