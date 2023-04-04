@@ -27,10 +27,10 @@ All site configurations are either contained in `_config.yml` or `_data/settings
 
 To run all tests: `rake test` or just `rake`
 
-To run one test file: `rake TEST=test/test_rake_posts_new`
+To run one test file: `rake TEST=test/test_site_content`
 
 To run an individual test in a test file:
-`rake TEST=test/test_rake_posts_new TESTOPTS=--name=test_rake_posts_new`
+`rake TEST=test/test_site_content TESTOPTS=--name=test_site_displays_no_empty_nicks`
 
 Before running tests for the first time, you may need to run `bundle update`.
 
