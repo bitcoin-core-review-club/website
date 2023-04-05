@@ -27,7 +27,8 @@ on GitHub.
 
 <span class="question">How do I take part?</span> Just show up on IRC! See
 [Attending your first PR Review Club](/your-first-meeting/) for more tips
-on how to participate.
+on how to participate. To stay up to date on newly announced review clubs,
+you can follow us on <a href="{{ site.data.social-media.twitter.href }}">Twitter</a> or via the <a href="{{ site.data.social-media.atom.href }}">Atom feed</a>.
 
 <span class="question">Who runs this?</span> &nbsp;Upcoming meetings are
 scheduled by {{ site.coordinator }}.
