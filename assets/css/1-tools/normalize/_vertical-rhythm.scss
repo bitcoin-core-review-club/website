@@ -13,7 +13,7 @@
     @return ($value / $base-font-size) * 1rem;
   }
   @else if $unit == em {
-    @return ($value / $relative-to) * 1em;
+    @return calc($value / $relative-to) * 1em;
   }
   @else { // $unit == px
     @return $value;
