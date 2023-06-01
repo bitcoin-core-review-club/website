@@ -12,26 +12,25 @@ title: Hosting a Review Club Meeting
   that is likely to be instructive or interesting. Don't select a PR just because
   you want it to be merged soon! You may even select a PR that is already merged.
 
-- The PRs discussed at review club should span a range of complexity
-  and difficulty levels, in order to cater to attendees with a variety of
+- The PR can be complex, but keep in mind that attendees may be at a variety of
   different experience levels. Some attendees have only just cloned the Bitcoin
   Core repo for the first time, and some have been contributing for months or
-  years. Having some meetings on basic PRs and others on more complex PRs ensures
-  that there's something for everyone.
+  years. If you choose a complex PR, try to provide notes that would help a
+  beginner get up to speed.
 
-- Generally, try to pick PRs that don't require a very high level of contextual
-  knowledge, since it's difficult to introduce a lot of concepts in a one hour
-  meeting.
+- It's fine to discuss a PR that you opened yourself. After all, you probably
+  know more about it than anyone else!
 
 - The appropriate amount of code change to discuss depends on the complexity of
   the code. It might be fine to discuss 10-20 lines of code if the change is
   very subtle or has complex interactions. If the change is more straightforward,
   then it might be fine to discuss 100+ lines of code change. If the PR seems too
-  large to cover in a meeting, consider only discussing a subset of the commits,
-  or breaking up the discussion over multiple meetings.
+  large, consider only discussing a subset of the commits.
 
-- It's fine to discuss a PR that you opened yourself. After all, you probably
-  know more about it than anyone else!
+- In the past, we have broken up discussion on a PR into multiple meetings, and
+  run additional meetings during the week to accommodate higher interest on more
+  complex PRs. If you feel additional time is appropriate, don't hesitate to
+  propose something!
 
 ## Before the Meeting
 
@@ -40,14 +39,13 @@ title: Hosting a Review Club Meeting
   interested in their PR and may be prepared to answer questions and give
   you more context. They may even want to join the meeting themselves.
 
-- Post an announcement for your PR as soon as you can - preferably 2 weeks
-  before the meeting.  See the [Making a New Post](#making-a-new-post) section
-  below for how to make an announcement post.
+- Post an announcement for your PR as soon as you can - at least 2 weeks before
+  the meeting.  See the [Making a New Post](#making-a-new-post) section below
+  for how to make an announcement post.
 
-- Post notes and questions on the Friday the week before the meeting.
-  That gives attendees time to review the PR and prepare for the meeting. Please
-  open your PR by that Thursday to allow time for maintainers to review and
-  merge it before the weekend.
+- Post notes and questions 1-2 weeks before the meeting. Again, the earlier, the better!
+  That gives attendees time to review the PR and prepare for the meeting; we typically see much
+  higher attendance and more lively discussions when attendees have more time to prepare.
 
 - Prepare a range of questions from basic to advanced. The review club is a way
   to help new developers learn. There should be something for everyone.
@@ -62,6 +60,12 @@ title: Hosting a Review Club Meeting
   - Advantages and disadvantages of this approach compared to alternative approaches.
   - Potential bugs reviewers might want to look out for.
   - Fun C++ things.
+
+- You may want to think about how you want to split the discussion across two
+  meetings. Here are some ideas:
+
+  - Conceptual and approach, then implementation.
+  - The first n commits of the PR, then the last n commits.
 
 - If you refer to yourself in the notes, use third person narrative
   (e.g. your name or GitHub profile) rather than first person ("I").
@@ -96,7 +100,7 @@ title: Hosting a Review Club Meeting
   understand the PR will make you feel more relaxed during the meeting.
 
 - If you find yourself struggling with writing the notes and questions, having
-  them ready by Friday, or choosing what areas to focus on, ask the review club
+  them ready in time, or choosing what areas to focus on, ask the review club
   maintainers for help.
 
 - It can be useful to write out some anticipated answers/links/references
@@ -180,7 +184,7 @@ rake posts:new -- --help
 - Have fun, and pat yourself on the back for making Bitcoin protocol development
   stronger and more decentralized 🚀
 
-## After the Meeting
+## After a Meeting
 
 Let one of the review club maintainers know that the meeting is over. They'll
 take care of updating the website.
@@ -204,7 +208,7 @@ _This process is done by the review club maintainers_
       > sanitized_log.txt
     ```
 
-- Change the `status` of the meeting post from `upcoming` to `past`.
+- If there won't be any more meetings, change the `status` of the post from `upcoming` to `past`.
   ```diff
   -status: upcoming
   +status: past
