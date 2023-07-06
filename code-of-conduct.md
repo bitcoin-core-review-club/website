@@ -62,14 +62,14 @@ Harrassment can take many forms. Examples include, but are not limited to:
 2. If the participant does not correct the issue or if you’re uncomfortable
    speaking up, contact the administrator. When reporting, please include any
    relevant details, links, screenshots, context that may be used to better
-   understand and resolve the situation. 
+   understand and resolve the situation.
 
 3. As soon as available, an administrator will join, identify themselves, and
    take further action. These actions could include:
 
     - A warning
-    - Removal from the club’s channel for the duration of that week’s meeting  
-    - Being banned from all future club meetings 
+    - Removal from the club’s channel for the duration of the ongoing meeting
+    - Being banned from all future club meetings
 
 We reserve the right to reject any report we believe to have been made in bad
 faith. Reports intended to silence legitimate criticism may be deleted without
