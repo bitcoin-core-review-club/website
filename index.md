@@ -37,10 +37,6 @@ some of our [previous hosts](/meetings-hosts/).
 
 ## Upcoming Meetings
 
-**We're taking a little break**
-
-Review Club is moving to a monthly schedule, and the website has been updated to reflect that. We'll be back on August 2nd with a new PR to cover.
-
 <table>
 {% for post in site.posts reversed %}
   {% capture components %}
