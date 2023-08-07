@@ -217,17 +217,15 @@ def create_post_file!(filename, response, date, host)
     line.puts "## Questions\n"
     line.puts "1. Did you review the PR? [Concept ACK, approach ACK, tested ACK, or NACK](https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md#peer-review)? What was your review approach?"
     line.puts "-->\n\n\n"
-    line.puts "<!-- TODO: After meeting 1, uncomment and add meeting log between the irc tags"
+    line.puts "<!-- TODO: After a meeting, uncomment and add meeting log between the irc tags."
     line.puts "## Meeting Log\n\n"
     line.puts "### Meeting 1\n\n"
     line.puts "{% irc %}"
-    line.puts "{% endirc %}"
-    line.puts "-->"
-    line.puts "<!-- TODO: After meeting 2, uncomment and add meeting log between the irc tags"
+    line.puts "-->\n"
+    line.puts "<!-- TODO: For additional meetings, add the logs to the same irc block. This ensures line numbers keep increasing, avoiding hyperlink conflicts for identical line numbers across meetings."
     line.puts "### Meeting 2\n\n"
-    line.puts "{% irc %}"
+    line.puts "-->\n"
     line.puts "{% endirc %}"
-    line.puts "-->"
   end
 end
 
