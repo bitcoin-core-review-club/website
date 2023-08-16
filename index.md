@@ -119,7 +119,7 @@ See all [meetings](/meetings/).
 - Brush up on your C++. There are [many primers and reference manuals
   available](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list).
 - There are some excellent blog posts on how to start contributing to Bitcoin Core:
-    - [A Gentle Introduction to Bitcoin Core Development (Jimmy Song)](https://bitcointechtalk.com/a-gentle-introduction-to-bitcoin-core-development-fdc95eaee6b8)
-    - [Contributing to Bitcoin Core - a Personal Account (John Newbery)](https://bitcointechtalk.com/contributing-to-bitcoin-core-a-personal-account-35f3a594340b)
+    - [A Gentle Introduction to Bitcoin Core Development (Jimmy Song)](https://medium.com/bitcoin-tech-talk/a-gentle-introduction-to-bitcoin-core-development-fdc95eaee6b8)
+    - [Contributing to Bitcoin Core - a Personal Account (John Newbery)](https://johnnewbery.com/contributing-to-bitcoin-core-a-personal-account/)
     - [Onboarding to Bitcoin Core (Amiti Uttarwar)](https://medium.com/@amitiu/onboarding-to-bitcoin-core-7c1a83b20365)
     - [How to Review Pull Requests in Bitcoin Core (Jon Atack)](https://jonatack.github.io/articles/how-to-review-pull-requests-in-bitcoin-core)
