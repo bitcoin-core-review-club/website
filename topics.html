@@ -1,0 +1,22 @@
+---
+layout: default
+title: Topics
+permalink: /topics/
+---
+
+<div class="Home">
+  <h2 class="Home-posts-title">Topics</h2>
+
+    <table style="padding-left: 1.5em;">
+        {% for topic in site.topics %}
+            <tr class="Home-posts-post">
+                <td class="Home-posts-post-arrow">
+                    &raquo;
+                </td>
+                <td>
+                    <a class="Home-posts-post-title" href="{{ topic.url }}">{{ topic.title }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>

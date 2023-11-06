@@ -20,3 +20,5 @@ gem 'color_pound_spec_reporter'
 
 # HTTP bindings to libcurl - https://github.com/taf2/curb
 gem 'curb'
+
+gem "nokogiri", "~> 1.13.10"

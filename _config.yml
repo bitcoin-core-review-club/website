@@ -32,6 +32,11 @@ exclude:
    - Rakefile
    - test/
 
+collections:
+  topics:
+    output: true
+    permalink: /topics/:slug
+
 defaults:
   - scope:
       path: ""  ## all pages

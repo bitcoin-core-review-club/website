@@ -81,7 +81,7 @@ desc 'Create a new post file'
 namespace :posts do
   task :new do
     # Fetch user command line args. Exit if required args are missing.
-    pr, host, date = get_cli_options
+    pr, host, date = get_cli_options_posts
     handle_missing_required_arg('pr') unless pr
     handle_missing_required_arg('host') unless host
 
@@ -120,7 +120,7 @@ namespace :posts do
   end
 end
 
-def get_cli_options(options = {})
+def get_cli_options_posts(options = {})
   OptionParser.new do |opts|
     opts.banner = 'Usage: rake posts:new -- <options>'
     opts.on('-p', '--pr NUMBER', 'Pull request number (required)') do
@@ -143,8 +143,57 @@ def get_cli_options(options = {})
   [options[:pr], options[:host], options[:date]]
 end
 
-def handle_missing_required_arg(name)
-  puts "Error: Missing required --#{name} argument. Run `rake posts:new -- --help` for info."
+# To see the rake topics:new help, run:
+#   rake topics:new -- -H
+#
+desc 'Create a new topics file'
+namespace :topics do
+  task :new do
+    # Fetch user command line args. Exit if required args are missing.
+    title, slug = get_cli_options_topics
+    
+    handle_missing_required_arg('title', 'topics') unless title
+
+    # Slugify title if slug not supplied by user.
+    unless slug
+      slug = title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+      puts "Topic '#{title}' has been slugified and filename set to : #{slug}"
+    end
+    # Create a new topic file if none exists, otherwise exit.
+    filename = "#{'_topics/' if File.directory?('_topics')}#{slug}.md"
+
+    if File.file?(filename)
+      puts "Filename #{filename} already exists. Nothing done, exiting."
+    else
+      create_topic_file!(filename, title)
+      puts "New file #{filename} created successfully."
+    end
+    exit
+  end
+end
+
+def get_cli_options_topics(options = {})
+  OptionParser.new do |opts|
+    opts.banner = 'Usage: rake topics:new -- <options>'
+    opts.on('-t', '--title TOPIC_LONG', 'Long name for topic (required)') do
+      |title| options[:title] = title
+    end
+    opts.on('-s', '--slug TOPIC_SHORT',
+            'Short name for topic (optional, defaults to slugified title)') do
+      |slug| options[:slug] = slug
+    end
+    opts.on('-H', '--help', 'Display this help') do
+      puts opts
+      exit
+    end
+    args = opts.order!(ARGV) {}
+    opts.parse!(args)
+  end
+  [options[:title], options[:slug]]
+end
+
+def handle_missing_required_arg(name, rake = "posts")
+  puts "Error: Missing required --#{name} argument. Run `rake #{rake}:new -- --help` for info."
   exit
 end
 
@@ -226,6 +275,24 @@ def create_post_file!(filename, response, date, host)
     line.puts "### Meeting 2\n\n"
     line.puts "-->\n"
     line.puts "{% endirc %}"
+  end
+end
+
+def create_topic_file!(filename, title)
+  def comment_out(line, header)
+    line.puts "<!-- uncomment to add"
+    line.puts "## #{header}"
+    line.puts "-->"
+  end
+
+  File.open(filename, 'w') do |line|
+    line.puts '---'
+    line.puts 'layout: topic'
+    line.puts "title: #{title}"
+    line.puts "---\n\n"
+    comment_out(line, "Notes")
+    comment_out(line, "History")
+    comment_out(line, "Resources")
   end
 end
 
