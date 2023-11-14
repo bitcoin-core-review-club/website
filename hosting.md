@@ -110,13 +110,13 @@ title: Hosting a Review Club Meeting
 
 [Fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks) the website repository [located on GitHub](https://github.com/bitcoin-core-review-club/website).
 
-To make a new post, run the following Ruby make command from the website directory:
+To make a new post, run the following command from the website directory:
 
 ```shell
-rake posts:new -- -p PR_NUMBER -h HOST_USERNAME -d YYYY-MM-DD
+./contrib/new_post.py -p <PR_NUMBER> -u <HOST_USERNAME> -d <YYYY-MM-DD>
 ```
 
-The `-p` (`pr`)  and `-h` (`host`) arguments are required. The `-d` (`date`)
+The `-p` (`pr`)  and `-u` (`host`) arguments are required. The `-d` (`date`)
 argument is optional; if no date is passed the meeting date will be set by default
 to next Wednesday.
 
@@ -128,7 +128,7 @@ initial Notes and Questions headers.
 For full help on the command, run
 
 ```shell
-rake posts:new -- --help
+./contrib/new_post.py -h
 ```
 
 ## In the Meeting
