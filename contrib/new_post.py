@@ -3,6 +3,7 @@
 import argparse
 from dataclasses import dataclass
 import datetime
+import glob
 import json
 import os
 import sys
@@ -169,6 +170,10 @@ def main() -> None:
     fname = f"_posts/{args.date}-#{args.pr}.md"
     if os.path.isfile(fname):
         sys.exit(f"file {fname} already exists!")
+
+    # Warn if PR has already been covered
+    if(previous_meetings := glob.glob(f'_posts/*#{args.pr}.md*')):
+        print(f"WARNING: PR already covered in {previous_meetings[0]}")
 
     # Query github api for PR information
     try:
