@@ -3,6 +3,7 @@
 import argparse
 from dataclasses import dataclass
 import datetime
+import glob
 import json
 import os
 import sys
@@ -57,14 +58,6 @@ def validate_date(date_in: str) -> str:
     """Normalizes data from any recognised iso format into YYYY-MM-DD"""
     date = datetime.date.fromisoformat(date_in)
     return date.isoformat()
-
-def next_wednesday() -> str:
-    """Get next Wednesday's data in YYYY-MM-DD format"""
-    today = datetime.date.today()
-    days_ahead = 2 - today.weekday()
-    if days_ahead <= 0:  # Target day already happened this week
-        days_ahead += 7
-    return (today + datetime.timedelta(days_ahead)).isoformat()
 
 def clean_title(title: str) -> str:
     """Normalizes the title formatting"""
@@ -167,10 +160,9 @@ def main() -> None:
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-p", "--pr", required=True, type=int, help="PR number (required)")
-    parser.add_argument("-u", "--host", required=True, help="Host's github username (required)")
-    parser.add_argument("-d", "--date", help="Meeting date in YYYY-DD-MM format (optional, defaults to next Wednesday)",
-                        type=validate_date, default=next_wednesday())
+    parser.add_argument("pr", type=int, help="PR number")
+    parser.add_argument("host", help="Host's github username")
+    parser.add_argument("date", help="Meeting date in YYYY-DD-MM format", type=validate_date)
 
     args = parser.parse_args()
 
@@ -178,6 +170,10 @@ def main() -> None:
     fname = f"_posts/{args.date}-#{args.pr}.md"
     if os.path.isfile(fname):
         sys.exit(f"file {fname} already exists!")
+
+    # Warn if PR has already been covered
+    if(previous_meetings := glob.glob(f'_posts/*#{args.pr}.md*')):
+        print(f"WARNING: PR already covered in {previous_meetings[0]}")
 
     # Query github api for PR information
     try:
