@@ -58,14 +58,6 @@ def validate_date(date_in: str) -> str:
     date = datetime.date.fromisoformat(date_in)
     return date.isoformat()
 
-def next_wednesday() -> str:
-    """Get next Wednesday's data in YYYY-MM-DD format"""
-    today = datetime.date.today()
-    days_ahead = 2 - today.weekday()
-    if days_ahead <= 0:  # Target day already happened this week
-        days_ahead += 7
-    return (today + datetime.timedelta(days_ahead)).isoformat()
-
 def clean_title(title: str) -> str:
     """Normalizes the title formatting"""
     words = title.split()
@@ -169,8 +161,8 @@ def main() -> None:
 
     parser.add_argument("-p", "--pr", required=True, type=int, help="PR number (required)")
     parser.add_argument("-u", "--host", required=True, help="Host's github username (required)")
-    parser.add_argument("-d", "--date", help="Meeting date in YYYY-DD-MM format (optional, defaults to next Wednesday)",
-                        type=validate_date, default=next_wednesday())
+    parser.add_argument("-d", "--date", required=True,  help="Meeting date in YYYY-DD-MM format (required)",
+                        type=validate_date)
 
     args = parser.parse_args()
 
