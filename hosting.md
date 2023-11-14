@@ -113,7 +113,7 @@ title: Hosting a Review Club Meeting
 To make a new post, run the following command from the website directory:
 
 ```shell
-./contrib/new_post.py -p <PR_NUMBER> -u <HOST_GITHUB_USERNAME> -d <YYYY-MM-DD>
+./contrib/new_post.py <PR_NUMBER> <HOST_GITHUB_USERNAME> <YYYY-MM-DD>
 ```
 
 This command will create a new markdown file for the post, with metadata and

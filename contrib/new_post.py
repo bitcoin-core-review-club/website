@@ -159,10 +159,9 @@ def main() -> None:
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-p", "--pr", required=True, type=int, help="PR number (required)")
-    parser.add_argument("-u", "--host", required=True, help="Host's github username (required)")
-    parser.add_argument("-d", "--date", required=True,  help="Meeting date in YYYY-DD-MM format (required)",
-                        type=validate_date)
+    parser.add_argument("pr", type=int, help="PR number")
+    parser.add_argument("host", help="Host's github username")
+    parser.add_argument("date", help="Meeting date in YYYY-DD-MM format", type=validate_date)
 
     args = parser.parse_args()
 
