@@ -14,7 +14,7 @@ coordinator:       "[glozow](https://github.com/glozow) and [stickies-v](https:/
 coordinator_irc:   "glozow or stickies-v"
 description:       "A monthly review club for Bitcoin Core PRs"
 meeting_day:       "Wednesday and Thursday"
-meeting_location:  'the #bitcoin-core-pr-reviews IRC channel on <a href="https://kiwiirc.com/nextclient/irc.libera.chat?channel=#bitcoin-core-pr-reviews">libera.chat</a>'
+meeting_location:  'the #bitcoin-core-pr-reviews IRC channel on <a href="https://web.libera.chat/?channel=#bitcoin-core-pr-reviews">libera.chat</a>'
 meeting_time:      "17:00 UTC"
 title:             "Bitcoin Core PR Review Club"
 twitter:
