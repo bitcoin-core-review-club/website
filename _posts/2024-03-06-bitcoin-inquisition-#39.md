@@ -35,15 +35,15 @@ For more usecases please checkout the [BIP](https://github.com/bitcoin/bips/pull
 
 1. Did you review the PR? [Concept ACK, approach ACK, tested ACK, or NACK](https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md#peer-review)? What was your review approach?
 
+1. What are the various conditions under which the execution of OP_CAT may result in failure?
+
 1. OP_CAT is defined as 0x7e. Even after replacing an OP_SUCCESS opcode, libraries can continue to use 0x7e to represent concatenation operations. Why is this the case?
-
-1. A new script verify flag is introduced: [`SCRIPT_VERIFY_OP_CAT`](https://github.com/0xBEEFCAF3/bitcoin/blob/armin/re-enable-op-cat/src/script/interpreter.h#L162). Is this considered a consensus-validating flag or a policy?
-
-1. If it is policy, where does the mempool policy reject transactions that use OP_CAT? Why does this policy exist?
 
 1. In [`deploymentinfo.cpp`](https://github.com/0xBEEFCAF3/bitcoin/blob/armin/re-enable-op-cat/src/deploymentinfo.cpp#L96), there are both an `OP_CAT` flag and a `DISCOURAGE_OP_CAT` flag. What is the rationale behind having both of these?
 
 1. When does consensus consider OP_SUCCESS126 replaced by OP_CAT?
+
+1. What is the expected behavior when neither flag is set?
 
 1. Why is it important to verify if OP_CAT is being executed in a non-segwitv0 or base-script context at [`L474:interpreter.cpp`](https://github.com/0xBEEFCAF3/bitcoin/blob/armin/re-enable-op-cat/src/script/interpreter.cpp#L475) rather than inside the opcode definition?
 
