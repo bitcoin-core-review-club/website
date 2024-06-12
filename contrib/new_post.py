@@ -6,9 +6,9 @@ import datetime
 import glob
 import json
 import os
+import subprocess
 import sys
-import sys
-import urllib.request
+from urllib.request import Request, urlopen
 
 MIN_PYTHON = (3, 9)
 
@@ -53,6 +53,15 @@ class PullRequest():
     title: str
     labels: list[str]
     user: str
+
+def git_config_get(option, default=None):
+    '''
+    Get named configuration option from git repository.
+    '''
+    try:
+        return subprocess.run(['git','config','--get',option], capture_output=True).stdout.rstrip().decode('utf-8')
+    except subprocess.CalledProcessError:
+        return default
 
 def validate_date(date_in: str) -> str:
     """Normalizes data from any recognised iso format into YYYY-MM-DD"""
@@ -142,7 +151,13 @@ def create_post_file(fname: str, pr: PullRequest, date: str, host: str) -> None:
         f.write("{% endirc %}\n")
 
 def load_pr_from_gh(n: int) -> PullRequest:
-    response = urllib.request.urlopen(f"{GITHUB_API_URL}/{n}")
+    req = Request(f"{GITHUB_API_URL}/{n}")
+
+    ghtoken = git_config_get('user.ghtoken')
+
+    if ghtoken is not None:
+        req.add_header('Authorization', 'token' + ghtoken)
+    response = urlopen(req)
     data = json.loads(response.read())
     try:
         return PullRequest(number=data['number'],
