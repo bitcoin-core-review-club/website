@@ -59,7 +59,7 @@ def git_config_get(option, default=None):
     Get named configuration option from git repository.
     '''
     try:
-        return subprocess.run(['git','config','--get',option], capture_output=True).stdout.rstrip().decode('utf-8')
+        return subprocess.check_output(['git','config','--get',option], encoding='utf-8').rstrip()
     except subprocess.CalledProcessError:
         return default
 
