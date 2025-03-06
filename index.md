@@ -2,26 +2,29 @@
 layout: default
 title: home
 ---
-### A monthly review club for Bitcoin Core PRs
+### A review club for Bitcoin Core PRs
 
-<span class="question">What is this?</span> &nbsp;A monthly club for reviewing
-Bitcoin Core PRs in {{ site.meeting_location }}. Meetings take place on the **first 
-{{ site.meeting_day }} of the month, at {{ site.meeting_time }}**.
+<span class="question">What is this?</span> &nbsp;A club for reviewing
+Bitcoin Core PRs in {{ site.meeting_location }}. Meetings take place on **{{ site.meeting_day }}, at {{ site.meeting_time }}**.
 
-<span class="question">What's it for?</span> &nbsp;To help newer contributors
-learn about the Bitcoin Core codebase and review process. The review club is *not* primarily
-intended to help open PRs get merged.
+<span class="question">What's it for?</span> &nbsp;To help all contributors
+learn about the Bitcoin Core codebase and participate in the review process. The
+review club is meant to be **beginner-friendly**, and is *not* primarily intended to
+help open PRs get merged.
 
 <span class="question">Who should take part?</span> &nbsp;Anyone who wants to
 learn about contributing to Bitcoin Core. All are welcome to come and ask
 questions!
 
 <span class="question">What's the benefit for participants?</span>
-&nbsp;Reviewing and testing PRs is the best way to start contributing to Bitcoin
-Core, but it's difficult to know where to start. There are hundreds of open PRs,
-many require a lot of contextual knowledge, and contributors and reviewers often
-use unfamiliar terminology. The review club will give you the tools and
-knowledge you need in order to take part in the [Bitcoin Core review
+&nbsp;Reviewing PRs is hard, and much more fun with friends. Authors and working
+groups can use this venue to answer questions, document discussions in public,
+and encourage more people to join.  For newcomers, reviewing and testing PRs is
+the best way to start contributing to Bitcoin Core, but it's difficult to know
+where to start. There are hundreds of open PRs, many require a lot of contextual
+knowledge, and contributors and reviewers often use unfamiliar terminology. The
+review club will give you the tools and knowledge you need in order to take part
+in the [Bitcoin Core review
 process](https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md#peer-review)
 on GitHub.
 
