@@ -7,19 +7,11 @@ title: Hosting a Review Club Meeting
 
 ## How to Choose a PR
 
-- The purpose of PR Review Club is to help new contributors learn about the
-  Bitcoin Core codebase and the process of contributing to the project. Select a PR
-  that is likely to be instructive or interesting. Don't select a PR just because
-  you want it to be merged soon! You may even select a PR that is already merged.
-
-- The PR can be complex, but keep in mind that attendees may be at a variety of
-  different experience levels. Some attendees have only just cloned the Bitcoin
-  Core repo for the first time, and some have been contributing for months or
-  years. If you choose a complex PR, try to provide notes that would help a
-  beginner get up to speed.
-
-- It's fine to discuss a PR that you opened yourself. After all, you probably
-  know more about it than anyone else!
+- The purpose of PR Review Club is to encourage and enable people to participate
+  in PR review, not just to review things. The best kind of PR is one that is
+interesting but not too ambitious - remember that some people might only have a
+few days to prepare. If you choose a complex PR, try to provide notes that would
+help a beginner get up to speed.
 
 - The appropriate amount of code change to discuss depends on the complexity of
   the code. It might be fine to discuss 10-20 lines of code if the change is
@@ -31,6 +23,16 @@ title: Hosting a Review Club Meeting
   run additional meetings during the week to accommodate higher interest on more
   complex PRs. If you feel additional time is appropriate, don't hesitate to
   propose something!
+
+- It's fine to discuss a PR that you opened yourself. After all, you probably
+  know more about it than anyone else! On the other hand, a host who is not the
+author may provide a good perspective.
+
+- Already-merged PRs are fair game.
+
+- The PR doesn't necessarily need to be to the Bitcoin Core repository. For
+  example, bitcoin-inquisition, libsecp256k1, and repos for Bitcoin Core-adjacent
+things are certainly relevant.
 
 ## Before the Meeting
 
@@ -61,11 +63,9 @@ title: Hosting a Review Club Meeting
   - Potential bugs reviewers might want to look out for.
   - Fun C++ things.
 
-- You may want to think about how you want to split the discussion across two
-  meetings. Here are some ideas:
-
-  - Conceptual and approach, then implementation.
-  - The first n commits of the PR, then the last n commits.
+- You may want to think about how you want to structure the discussion. For
+  example, you may want to discuss conceptual, approach, then implementation.
+  Larger PRs can also be split by commit.
 
 - If you refer to yourself in the notes, use third person narrative
   (e.g. your name or GitHub profile) rather than first person ("I").
