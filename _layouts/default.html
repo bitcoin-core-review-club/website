@@ -13,41 +13,14 @@
       {% include header.html %}
       {{ content }}
       {% include footer.html %}
-    </div>
-  </div>
+    <div>
+  <div>
 
 </body>
 
 <script>
-  function save() {
-    const dark = document.getElementById('color-mode').checked;
-    window.localStorage.setItem('dark', String(dark));
-    applyColorMode(dark);
-  }
-
-  function applyColorMode(dark) {
-    if (dark) {
-      document.documentElement.classList.add('dark-mode');
-    } else {
-      document.documentElement.classList.remove('dark-mode');
-    }
-  }
-
-  function initializeColorMode() {
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const storedDarkMode = window.localStorage.getItem('dark');
-    const dark = storedDarkMode !== null ? storedDarkMode === "true" : prefersDarkScheme;
-    document.getElementById('color-mode').checked = dark;
-    applyColorMode(dark);
-  }
-
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', event => {
-    const dark = event.matches;
-    document.getElementById('color-mode').checked = dark;
-    applyColorMode(dark);
-  });
-
-  initializeColorMode();
+  const dark = window.localStorage.getItem('dark') === "true";
+  document.getElementById('color-mode').checked = dark;
 </script>
 
 </html>

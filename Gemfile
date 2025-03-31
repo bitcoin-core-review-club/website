@@ -20,3 +20,9 @@ gem 'color_pound_spec_reporter'
 
 # HTTP bindings to libcurl - https://github.com/taf2/curb
 gem 'curb'
+
+gem "logger", "~> 1.7"
+
+gem "base64", "~> 0.2.0"
+
+gem "bigdecimal", "~> 3.1"

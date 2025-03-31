@@ -3,7 +3,7 @@
     {% assign sm = site.data.social-media %}
     {% for entry in sm %}
         {% assign key = entry | first %}
-        <a href="{{ sm[key].href }}" title="{{ sm[key].title }}"><i class="fa {{ sm[key].fa-icon }}"></i></a>
+        <a href="{{ sm[key].href }}" title="{{ sm[key].title }}"><i class="fa {{ sm[key].fa-icon }}" style="color: #000000;"=></i></a>
     {% endfor %}
 </div>
 {% endif %}
