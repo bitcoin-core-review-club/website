@@ -7,7 +7,7 @@ preview:
 	## Don't do a full rebuild (to save time), but always rebuild index.html and meetings pages
 	rm _site/index.html || true
 	rm -rf _site/meetings* || true
-	bundle exec jekyll serve --future --drafts --unpublished --incremental
+	bundle exec jekyll serve --host 0.0.0.0 --future --drafts --unpublished --incremental
 
 build:
 	bundle exec jekyll clean

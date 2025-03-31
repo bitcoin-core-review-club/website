@@ -4,6 +4,18 @@ Simple Jekyll site for hosting the Bitcoin Core PR Review club at https://bitcoi
 
 ## Development
 
+### Using Docker (recommended)
+
+You'll need [Docker](https://docs.docker.com/get-docker/) and [Docker
+Compose](https://docs.docker.com/compose/install/) installed.
+
+* Clone the repository and go into the directory
+* Run `docker compose up preview` to start the development server with
+  live reload
+* Go to http://localhost:4000
+
+### Traditional Setup
+
 You'll need [Ruby and Jekyll](https://jekyllrb.com/docs/installation/) to run
 the site locally. Ruby 2.6 is recommended. Once they are set up:
 
