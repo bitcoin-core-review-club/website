@@ -3,12 +3,17 @@
 source "https://rubygems.org"
 
 # Jekyll
-gem "jekyll", "~> 3.8"
-gem "jekyll-paginate", "~> 1.1"
-gem "jekyll-sitemap", "~> 1.3"
-gem "jekyll-feed", "~> 0.12.1"
-gem "jekyll-seo-tag", "~> 2.6"
+gem "jekyll", "~> 3.9.5"
+gem "jekyll-paginate"
+gem "jekyll-sitemap"
+gem "jekyll-feed"
+gem "jekyll-seo-tag"
 gem "kramdown-parser-gfm"
+gem "logger"
+gem "base64"
+gem "bigdecimal"
+gem "csv"
+gem 'webrick'
 
 # Ruby make
 gem 'rake'
