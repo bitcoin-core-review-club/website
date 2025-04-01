@@ -4,14 +4,14 @@ source "https://rubygems.org"
 
 # Jekyll
 gem "jekyll", "~> 3.10.0"
-gem "jekyll-paginate"
-gem "jekyll-sitemap"
-gem "jekyll-feed"
-gem "jekyll-seo-tag"
-gem "kramdown-parser-gfm"
-gem "logger"
-gem "base64"
-gem "bigdecimal"
+gem "jekyll-paginate", "~> 1.1"
+gem "jekyll-sitemap", "~> 1.4"
+gem "jekyll-feed", "~> 0.17"
+gem "jekyll-seo-tag", "~> 2.8"
+gem "kramdown-parser-gfm", "~> 1.1"
+gem "logger", "~> 1.7"
+gem 'base64', '~> 0.2.0'
+gem 'bigdecimal', '~> 3.1.9'
 
 # Ruby make
 gem 'rake'
