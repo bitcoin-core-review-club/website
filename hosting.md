@@ -198,6 +198,7 @@ _This process is done by the review club maintainers_
       | sed -n '/#startmeeting/h;//!H;$!d;x;//p' \
       | sed '/#endmeeting/q' \
       | sed '/[⇐→]/d' \
+      | LC_ALL=C tr -dc '\011\012\015\040-\176\200-\377' \
       | cut -c 13-17,22- \
       > sanitized_log.txt
     ```
