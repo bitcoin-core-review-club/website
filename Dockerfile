@@ -10,7 +10,7 @@ WORKDIR /app
 
 COPY Gemfile* ./
 
-RUN gem install bundler -v 2.6.2
+RUN gem install bundler
 RUN bundle install
 
 EXPOSE 4000
