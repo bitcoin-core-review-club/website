@@ -20,7 +20,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    ffi (1.17.1-x86_64-linux-gnu)
+    ffi (1.17.1)
     forwardable-extended (2.6.0)
     http_parser.rb (0.8.0)
     i18n (1.14.7)
@@ -86,23 +86,23 @@ GEM
     webrick (1.9.1)
 
 PLATFORMS
-  x86_64-linux-gnu
+  ruby
 
 DEPENDENCIES
-  base64
-  bigdecimal
+  base64 (~> 0.2.0)
+  bigdecimal (~> 3.1.9)
   color_pound_spec_reporter
   curb
   jekyll (~> 3.10.0)
-  jekyll-feed
-  jekyll-paginate
-  jekyll-seo-tag
-  jekyll-sitemap
-  kramdown-parser-gfm
-  logger
+  jekyll-feed (~> 0.17)
+  jekyll-paginate (~> 1.1)
+  jekyll-seo-tag (~> 2.8)
+  jekyll-sitemap (~> 1.4)
+  kramdown-parser-gfm (~> 1.1)
+  logger (~> 1.7)
   minitest
   minitest-reporters
   rake
 
 BUNDLED WITH
-   2.6.6
+   2.3.5
