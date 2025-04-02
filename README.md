@@ -17,7 +17,7 @@ Compose](https://docs.docker.com/compose/install/) installed.
 ### Traditional Setup
 
 You'll need [Ruby and Jekyll](https://jekyllrb.com/docs/installation/) to run
-the site locally. Ruby 2.6 is recommended. Once they are set up:
+the site locally. Ruby 3.4 is recommended. Once they are set up:
 
 * Clone the repository and go into the directory
 * Run `bundle install`

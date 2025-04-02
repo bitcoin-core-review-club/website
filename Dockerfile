@@ -1,4 +1,4 @@
-FROM ruby:2.6.6-slim
+FROM ruby:3.4-slim
 
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -10,7 +10,7 @@ WORKDIR /app
 
 COPY Gemfile* ./
 
-RUN gem install bundler -v 2.4.22
+RUN gem install bundler
 RUN bundle install
 
 EXPOSE 4000
