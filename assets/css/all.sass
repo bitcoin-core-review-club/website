@@ -36,8 +36,9 @@ body
 
 #color-mode-switch
   user-select: none
-  right: 0
   position: absolute
+  top: 0.5rem
+  right: 0.5rem
 
 // Light (default)
 #color-mode:not(:checked) ~ .site-container
@@ -50,6 +51,7 @@ body
   --log-color: #808080
   --target-color: #dddddd
   --meeting-index-color: #606060
+  --icon-color: black
 
 // Dark
 #color-mode:checked ~ .site-container
@@ -62,6 +64,7 @@ body
   --log-color: #080808
   --target-color: #3a3939
   --meeting-index-color: #8c5e5e
+  --icon-color: white
 
 a
   color: var(--link-color)
@@ -167,3 +170,6 @@ a
   font-size: 50%
   display: flex
   align-items: flex-end
+
+.fa, .fas, .far, .fal, .fab
+  color: var(--icon-color)
