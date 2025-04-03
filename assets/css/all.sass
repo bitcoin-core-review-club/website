@@ -31,16 +31,8 @@ body
   height: 100%
   min-height: 100%
 
-#color-mode
-  display: none
-
-#color-mode-switch
-  user-select: none
-  right: 0
-  position: absolute
-
 // Light (default)
-#color-mode:not(:checked) ~ .site-container
+.site-container
   --bg-color: white
   --text-color: black
   --link-color: #0000f0
@@ -51,17 +43,18 @@ body
   --target-color: #dddddd
   --meeting-index-color: #606060
 
-// Dark
-#color-mode:checked ~ .site-container
-  --bg-color: black
-  --text-color: white
-  --link-color: #58a6ff
-  --link-visited-color: #824bb7
-  --code-bg-color: #565656
-  --log-bg-color: #565656
-  --log-color: #080808
-  --target-color: #3a3939
-  --meeting-index-color: #8c5e5e
+// Dark mode using media query
+@media (prefers-color-scheme: dark)
+  .site-container
+    --bg-color: black
+    --text-color: white
+    --link-color: #58a6ff
+    --link-visited-color: #824bb7
+    --code-bg-color: #565656
+    --log-bg-color: #565656
+    --log-color: #080808
+    --target-color: #3a3939
+    --meeting-index-color: #8c5e5e
 
 a
   color: var(--link-color)

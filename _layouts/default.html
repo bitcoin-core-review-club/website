@@ -5,9 +5,6 @@
 
 <body>
 
-  <input id="color-mode" type="checkbox" name="color-mode" onclick='save()'>
-  <label id="color-mode-switch" for="color-mode">💡</label>
-
   <div class="site-container">
     <div class="page-content">
       {% include header.html %}
@@ -17,15 +14,5 @@
   <div>
 
 </body>
-
-<script>
-  function save() {
-    const dark = document.getElementById('color-mode').checked;
-    window.localStorage.setItem('dark', String(dark));
-  }
-
-  const dark = window.localStorage.getItem('dark') === "true";
-  document.getElementById('color-mode').checked = dark;
-</script>
 
 </html>
