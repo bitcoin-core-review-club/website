@@ -63,3 +63,8 @@
 .css .o,
 .css .o + .nt,
 .css .nt + .nt { color: #999; }
+
+@media (prefers-color-scheme: dark) {
+    .highlight .gd { color: black }
+    .highlight .gi { color: black }
+}
