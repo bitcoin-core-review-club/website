@@ -56,10 +56,8 @@ layout: default
     {%- endunless -%}
     </p>
 
-    {% if page.status == "past" %}
-      {% if page.commit %}
+    {% if page.commit %}
       <p><em>The PR branch HEAD was <a href="https://github.com/bitcoin-core-review-club/bitcoin/tree/pr{{ page.id | remove_first: "/#" }}/">{{ page.commit }}</a> at the time of this review club meeting.</em><p>
-      {%- endif -%}
     {%- endif -%}
 
     <p>
